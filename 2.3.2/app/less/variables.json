@@ -1,0 +1,25 @@
+[
+		
+	{ 
+		"name" : "Typography",
+		"data": [
+			
+			{"key":"@baseFontSize", "value":"14px", "type": "text"},
+			{"key":"@baseFontFamily", "value":"@sansFontFamily", "type": "text"},
+			{"key":"@baseLineHeight", "value":"20px", "type": "text"},
+			
+                        {"key":"@paraColour", "value":"#000", "type": "color"},
+			
+			{"key":"@headingsFontFamily", "value":"inherit", "type": "text"}, 
+			{"key":"@headingsFontWeight", "value":"bold", "type": "text"},    
+			{"key":"@headingsColor", "value":"#000", "type": "color"},
+                      
+                        {"key":"@btnBackground", "value":"@white", "type": "color"},
+			{"key":"@btnBackgroundHighlight", "value":"darken(@white, 10%)", "type": "color"},
+			{"key":"@btnBorder", "value":"#bbb", "type": "color"}
+			
+				
+		] 
+	
+	}
+]
