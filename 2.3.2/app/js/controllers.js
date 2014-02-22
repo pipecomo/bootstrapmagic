@@ -64,6 +64,7 @@ function LessCtrl($scope, $http, ap_less) {
     
     $scope.applyLess = function (event) {
         var vars = ap_less.getVariables($scope);
+        console.log(vars);
         less.modifyVars(vars);
     };
     

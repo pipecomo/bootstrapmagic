@@ -161,7 +161,8 @@
     -moz-transform: scale(0.5) rotate(360deg);
   }
 }
-/* @end *//* @DROPDOWN COLORPICKER */
+/* @end */
+/* @DROPDOWN COLORPICKER */
 div.colorpicker {
   min-width: 0;
   padding: 0;
@@ -437,7 +438,6 @@ div.colorpicker div.colorpicker-hue {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   *background-color: #e5e5e5;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
   -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.075);
@@ -569,7 +569,6 @@ div.colorpicker div.colorpicker-hue {
   display: inline-block;
   *display: inline;
   /* IE7 inline-block hack */
-
   *zoom: 1;
   padding: 4px 12px;
   margin-bottom: 0;
@@ -592,7 +591,6 @@ div.colorpicker div.colorpicker-hue {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   *background-color: #e6e6e6;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
   border: 1px solid #bbbbbb;
   *border: 0;
@@ -622,7 +620,7 @@ div.colorpicker div.colorpicker-hue {
   *margin-left: 0;
 }
 .protected .btn:hover {
-  color: #333333;
+  color: #9d261d;
   text-decoration: none;
   background-position: 0 -15px;
   -webkit-transition: background-position 0.1s linear;
@@ -680,7 +678,6 @@ div.colorpicker div.colorpicker-hue {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   *background-color: #dc512c;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .protected .btn-primary:hover,
@@ -711,7 +708,6 @@ div.colorpicker div.colorpicker-hue {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   *background-color: #f89406;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .protected .btn-warning:hover,
@@ -742,7 +738,6 @@ div.colorpicker div.colorpicker-hue {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   *background-color: #bd362f;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .protected .btn-danger:hover,
@@ -773,7 +768,6 @@ div.colorpicker div.colorpicker-hue {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   *background-color: #51a351;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .protected .btn-success:hover,
@@ -804,7 +798,6 @@ div.colorpicker div.colorpicker-hue {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   *background-color: #2f96b4;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .protected .btn-info:hover,
@@ -835,7 +828,6 @@ div.colorpicker div.colorpicker-hue {
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
   *background-color: #222222;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
 }
 .protected .btn-inverse:hover,
@@ -2700,7 +2692,8 @@ div.colorpicker div.colorpicker-hue {
 .apico-digg {
   background-position: -299px -153px;
 }
-/*1 3px off*/.apico-behance {
+/*1 3px off*/
+.apico-behance {
   background-position: -350px -153px;
 }
 /*0 2px off*/

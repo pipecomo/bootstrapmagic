@@ -8,15 +8,31 @@
 			{"key":"@baseFontFamily", "value":"@sansFontFamily", "type": "text"},
 			{"key":"@baseLineHeight", "value":"20px", "type": "text"},
 			
-                        {"key":"@paraColour", "value":"#000", "type": "color"},
+                        {"key":"@paraColor", "value":"#000", "type": "color"},
 			
 			{"key":"@headingsFontFamily", "value":"inherit", "type": "text"}, 
 			{"key":"@headingsFontWeight", "value":"bold", "type": "text"},    
 			{"key":"@headingsColor", "value":"#000", "type": "color"},
+                        {"key":"@headingMarginFactor", "value":"2", "type": "text"},
                       
                         {"key":"@btnBackground", "value":"@white", "type": "color"},
 			{"key":"@btnBackgroundHighlight", "value":"darken(@white, 10%)", "type": "color"},
-			{"key":"@btnBorder", "value":"#bbb", "type": "color"}
+			{"key":"@btnBorder", "value":"#bbb", "type": "color"},
+                        {"key":"@btnFontColor", "value":"#e06342", "type": "color"},
+                         {"key":"@btnPadding", "value":"15px 20px", "type": "text"},
+                         {"key":"@btnFontSize", "value":"20px", "type": "text"},
+                        
+                        {"key":"@linkColor", "value":"#e06342", "type": "color"},
+                        {"key":"@linkColorHover", "value":"inherit", "type": "color"},
+                        
+                        {"key":"@insetBoxBorderColor", "value":"#e06342", "type": "color"},
+                        {"key":"@insetBoxFontColor", "value":"black", "type": "color"},
+                        {"key":"@insetBoxMargin", "value":"40px", "type": "text"},    
+                        {"key":"@insetBoxTopBottomPadding", "value":"25px", "type": "text"},    
+                        {"key":"@insetBoxBorderWidth", "value":"1px", "type": "text"},  
+                        {"key":"@insetBoxFontSize", "value":"16px", "type": "text"},
+                        {"key":"@listLeftMargin", "value":"30px", "type": "text"},
+                        {"key":"@listIcon", "value":"\"\\000BB\"", "type": "text"}    
 			
 				
 		] 
