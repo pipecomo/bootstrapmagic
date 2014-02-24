@@ -13,7 +13,7 @@
 			{"key":"@headingsFontFamily", "value":"inherit", "type": "text"}, 
 			{"key":"@headingsFontWeight", "value":"bold", "type": "text"},    
 			{"key":"@headingsColor", "value":"#000", "type": "color"},
-                        {"key":"@headingMarginFactor", "value":"2", "type": "text"},
+                        {"key":"@headingMarginFactor", "value":"1.5", "type": "text"},
                       
                         {"key":"@btnBackground", "value":"@white", "type": "color"},
 			{"key":"@btnBackgroundHighlight", "value":"darken(@white, 10%)", "type": "color"},
