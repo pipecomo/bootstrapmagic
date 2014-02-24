@@ -11,6 +11,51 @@ This is the custom created CSS
 */
 
 .richTextBlock{
+    //container widths
+    .widescreen .container{
+        min-width: @widescreenWidth;
+         // Fixed grid
+  #grid > .core(@gridColumnWidth1200, @gridGutterWidth1200);
+
+  // Fluid grid
+  #grid > .fluid(@fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
+
+  // Input grid
+  #grid > .input(@gridColumnWidth1200, @gridGutterWidth1200);
+
+  // Thumbnails
+  .thumbnails {
+    margin-left: -@gridGutterWidth1200;
+  }
+  .thumbnails > li {
+    margin-left: @gridGutterWidth1200;
+  }
+  .row-fluid .thumbnails {
+    margin-left: 0;
+  }
+    }
+    .desktop .container{
+        max-width: @widescreenWidth -1;
+        min-width: @desktopWidth;
+    // Fixed grid
+  #grid > .core(@gridColumnWidth, @gridGutterWidth);
+
+  // Fluid grid
+  #grid > .fluid(@fluidGridColumnWidth, @fluidGridGutterWidth);
+
+  // Input grid
+  #grid > .input(@gridColumnWidth, @gridGutterWidth);    
+    }
+     .tablet .container{
+         max-width: @tabletWidth; 
+        min-width: @phoneWidth +1;
+         
+    }
+    
+    .phone .container{
+        max-width: @phoneWidth; 
+     
+    }
     
     // for the headings
     h {

@@ -1,11 +1,13 @@
 <!-- Typography
 ================================================== 
 -->
-
-<div class="container">
-    <div class="row">
-        <div class="richTextBlock">
-            <div class="span7">
+<!-- For the 1200 resolution-->
+<div class="richTextBlock">
+    <div class="widescreen">  
+        <div class="container" ng-show="widthSelection == '1200'">
+            <div class="row">
+      
+              <div class="span7">
                 <h1>This is a large header yo h1</h1>
                
                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor. Vivamus accumsan rhoncus nunc, eget mollis ligula ullamcorper vitae. Suspendisse tristique ligula nec orci sollicitudin, venenatis tincidunt lorem tincidunt.
@@ -83,7 +85,200 @@
                 </ol>
                 <button class="btn"> Button Example Here </button>
             </div>
-        </div>        
+        </div>  
+       </div>        
+    </div>
+    
+
+<!-- For the 980 resolution-->
+    <div class="desktop">  
+        <div class="container" ng-show="widthSelection == '980'">
+            <div class="row">
+      
+              <div class="span8">
+                <h1>This is a large header yo h1</h1>
+               
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor. Vivamus accumsan rhoncus nunc, eget mollis ligula ullamcorper vitae. Suspendisse tristique ligula nec orci sollicitudin, venenatis tincidunt lorem tincidunt.
+                                <a href="#">This line of text is meant to be an anchor.</a>
+                </p>
+                <div class="clear"></div>
+                <h2>And this is an example of h2</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor.
+                </p>
+                <div class="boxInset">
+                    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, perfer et obdura; dolor hic tibi proderit olim. 
+                </div>
+                
+                <p>
+                    Proin posuere aliquam bibendum. Maecenas laoreet lorem eget auctor ultricies. Fusce nunc lacus, vestibulum at volutpat at, vestibulum eget neque.
+                </p>
+                <ul>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                </ul>
+                
+                <h3> This is heading in H3</h3>
+                <p>
+                    Proin posuere aliquam bibendum. Maecenas laoreet lorem eget auctor ultricies. Fusce nunc lacus, vestibulum at volutpat at, vestibulum eget neque.
+                </p>
+                <ol>
+                    <li>   <a href="#">This line of text is meant to be an anchor.</a></li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                </ol>
+                <button class="btn"> Button Example Here </button>
+            </div>
+            <div class="span4 pull-right">
+                 <h2>And this is an example of h2</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor.
+                </p>
+                <div class="boxInset">
+                    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, perfer et obdura; dolor hic tibi proderit olim. 
+                </div>
+                
+                <p>
+                    Proin posuere aliquam bibendum. Maecenas laoreet lorem eget auctor ultricies. Fusce nunc lacus, vestibulum at volutpat at, vestibulum eget neque.
+                </p>
+                <ul>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                </ul>
+                
+                <h3> This is heading in H3</h3>
+                <p>
+                    Proin posuere aliquam bibendum. Maecenas laoreet lorem eget auctor ultricies. Fusce nunc lacus, vestibulum at volutpat at, vestibulum eget neque.
+                </p>
+                <ol>
+                    <li>   <a href="#">This line of text is meant to be an anchor.</a></li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                </ol>
+                <button class="btn"> Button Example Here </button>
+            </div>
+        </div>  
+       </div>        
+    </div>
+
+<!-- For the 768 resolution-->
+    <div class="tablet">  
+        <div class="container" ng-show="widthSelection == '768'">
+            <div class="row">
+      
+              <div>
+                <h1>This is a large header yo h1</h1>
+               
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor. Vivamus accumsan rhoncus nunc, eget mollis ligula ullamcorper vitae. Suspendisse tristique ligula nec orci sollicitudin, venenatis tincidunt lorem tincidunt.
+                                <a href="#">This line of text is meant to be an anchor.</a>
+                </p>
+                <div class="clear"></div>
+                <h2>And this is an example of h2</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor.
+                </p>
+                <div class="boxInset">
+                    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, perfer et obdura; dolor hic tibi proderit olim. 
+                </div>
+                
+                <p>
+                    Proin posuere aliquam bibendum. Maecenas laoreet lorem eget auctor ultricies. Fusce nunc lacus, vestibulum at volutpat at, vestibulum eget neque.
+                </p>
+                <ul>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                </ul>
+                
+                <h3> This is heading in H3</h3>
+                <p>
+                    Proin posuere aliquam bibendum. Maecenas laoreet lorem eget auctor ultricies. Fusce nunc lacus, vestibulum at volutpat at, vestibulum eget neque.
+                </p>
+                <ol>
+                    <li>   <a href="#">This line of text is meant to be an anchor.</a></li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                </ol>
+                <button class="btn"> Button Example Here </button>
+            </div>
+           
+        </div>  
+       </div>        
+    </div>
+
+<!-- For the 360 resolution-->
+    <div class="phone">  
+        <div class="container" ng-show="widthSelection == '360'">
+            <div class="row">
+      
+              <div>
+                <h1>This is a large header yo h1</h1>
+               
+                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor. Vivamus accumsan rhoncus nunc, eget mollis ligula ullamcorper vitae. Suspendisse tristique ligula nec orci sollicitudin, venenatis tincidunt lorem tincidunt.
+                                <a href="#">This line of text is meant to be an anchor.</a>
+                </p>
+                <div class="clear"></div>
+                <h2>And this is an example of h2</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at sapien at justo euismod congue. Morbi eu suscipit felis. Etiam convallis tempus nisi ac tincidunt. Nunc sed ultricies erat, et ultricies tortor.
+                </p>
+                <div class="boxInset">
+                    Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, perfer et obdura; dolor hic tibi proderit olim. 
+                </div>
+                
+                <p>
+                    Proin posuere aliquam bibendum. Maecenas laoreet lorem eget auctor ultricies. Fusce nunc lacus, vestibulum at volutpat at, vestibulum eget neque.
+                </p>
+                <ul>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                </ul>
+                
+                <h3> This is heading in H3</h3>
+                <p>
+                    Proin posuere aliquam bibendum. Maecenas laoreet lorem eget auctor ultricies. Fusce nunc lacus, vestibulum at volutpat at, vestibulum eget neque.
+                </p>
+                <ol>
+                    <li>   <a href="#">This line of text is meant to be an anchor.</a></li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                    <li> this is test</li>
+                </ol>
+                <button class="btn"> Button Example Here </button>
+            </div>
+           
+        </div>  
+       </div>        
     </div>
     
 </div>

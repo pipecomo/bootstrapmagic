@@ -127,5 +127,10 @@ function LessCtrl($scope, $http, ap_less) {
         return 'preview/' + angular.lowercase(this.group.name).replace(/[^\w ]+/g,'').replace(/ +/g,'-') + '.html';
     };
     
+    // added by pipe
+   // $scope.sideBarSelection = 'show';
+    $scope.changeWidth = function(){
+        alert('change width');
+    }
 }
 LessCtrl.$inject = ['$scope', '$http', 'ap_less'];

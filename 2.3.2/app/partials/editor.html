@@ -15,14 +15,15 @@
 
 <div class="container">
     <form class="piEditor">
+       
         <section ng-repeat="group in variables" class="{{ group.name }}">
-            <div class="row" class="protected">
+            <div class="row" class="protected" ng-show="sideBarSelection == 'show'">
                 <div class="span12">
                     <h2 class="groupNameTitle" id="{{ group.name }}">{{ group.name }}</h2>
                 </div>
             </div>
             <div class="row">
-                <div class="span4">
+                <div class="span4" ng-show="sideBarSelection == 'show'">
                     <div ng-repeat="variable in group.data" class="protected">
                         <label class="labelTitle">{{variable.key}}</label></td>                
                         <div data-ColorPickerApply="autoApplyLess()" class="input {' ap-color-picker: variable.value': colorpicker(variable.type)}" data-color="{{ color(variable.type, variable.value) }}" data-color-format="hex" ng-class="{'input-append color colorpicker' : colorpicker(variable.type)}">

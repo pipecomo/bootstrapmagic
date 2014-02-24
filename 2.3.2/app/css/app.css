@@ -306,8 +306,8 @@ div.colorpicker div.colorpicker-hue {
 }
 .protected .colorpicker span.add-on i {
   margin: -1px 0px 0px;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   z-index: 0;
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
@@ -555,7 +555,7 @@ div.colorpicker div.colorpicker-hue {
 .protected input[type="color"],
 .protected .uneditable-input {
   display: inline-block;
-  height: 20px;
+  height: 30px;
   padding: 4px 6px;
   margin-bottom: 10px;
   font-size: 14px;
