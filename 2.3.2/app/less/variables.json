@@ -50,8 +50,44 @@
                         {"key":"@tagFontSize", "value":"15px", "type": "text"},
                         {"key":"@tagFontStyle", "value":"normal", "type": "text"},
                         {"key":"@tagPadding", "value":"2px 10px", "type": "text"},
-                        {"key":"@tagFontFamily", "value":"'Open Sans', sans-serif", "type": "text"}
+                        {"key":"@tagFontFamily", "value":"'Open Sans', sans-serif", "type": "text"},
 			
+                        
+                        {"key":"@imageTitleFontColor", "value":"#ea9217", "type": "color"},
+                        {"key":"@imageTitleBackground", "value":"rgba(0,0,0,0.5)", "type": "text"},    
+                        {"key":"@imageTitleFontSize", "value":"28px", "type": "text"},    
+                        {"key":"@imageTitleTopPosition", "value":"20px", "type": "text"},  
+                        {"key":"@imageTitleRightPosition", "value":"20px", "type": "text"},
+                        {"key":"@imageTitlePadding", "value":"15px", "type": "text"},
+                        {"key":"@imageTitleTextShadow", "value":"none", "type": "text"},
+                        {"key":"@imageTitleFontFamily", "value":"'Open Sans', sans-serif", "type": "text"},
+                        {"key":"@imageTitleFontWeight", "value":"bold", "type": "text"},
+                        {"key":"@imageTitleFontStyle", "value":"normal", "type": "text"},
+                        {"key":"@imageTitlePosition", "value":"absolute", "type": "text"},
+                        {"key":"@imageTitleTop", "value":"27%", "type": "text"},
+                        {"key":"@imageTitleLeft", "value":"9.5%", "type": "text"},
+                        {"key":"@imageTitleWidth", "value":"300px", "type": "text"},
+                        
+                        {"key":"@imageCaptionFontColor", "value":"#363636", "type": "color"},
+                        {"key":"@imageCaptionTop", "value":"inherit", "type": "text"},    
+                        {"key":"@imageCaptionLeft", "value":"0px", "type": "text"},    
+                        {"key":"@imageCaptionPosition", "value":"absolute", "type": "text"},  
+                        {"key":"@imageCaptionBottom", "value":"-10px", "type": "text"},
+                        {"key":"@imageCaptionBackground", "value":"rgba(255,255,255,0.8)", "type": "text"},
+                        {"key":"@imageCaptionPadding", "value":"10px 1%", "type": "text"},
+                        {"key":"@imageCaptionFontFamily", "value":"'Open Sans', sans-serif", "type": "text"},
+                        {"key":"@imageCaptionWidth", "value":"98%", "type": "text"},
+                        {"key":"@imageCaptionFontSize", "value":"16px", "type": "text"},
+                        {"key":"@imageCaptionFontStyle", "value":"normal", "type": "text"},
+                        {"key":"@imageCaptionFontWeight", "value":"bold", "type": "text"},
+                        
+                         {"key":"@navColor", "value":"#ff6600", "type": "color"},
+                        {"key":"@navHeight", "value":"30px", "type": "text"},    
+                        {"key":"@navWidth", "value":"30px", "type": "text"},    
+                        {"key":"@navFontSize", "value":"30px", "type": "text"},  
+                        {"key":"@navDirectionIconLeft", "value":"\"\\f054\"", "type": "text"},
+                        {"key":"@navDirectionIconRight", "value":"\"\\f053\"", "type": "text"}
+                        
 				
 		] 
 	
