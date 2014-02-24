@@ -7,7 +7,17 @@ and open the template in the editor.
     Created on : 24 Feb, 2014, 12:54:17 PM
     Author     : pipe
 */
-
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../../2.3.2/app/font/fontawesome-webfont.eot?v=3.2.1');
+  src: url('../../2.3.2/app/font/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+       url('../../2.3.2/app/font/fontawesome-webfont.woff?v=3.2.1') format('woff'), 
+       url('../../2.3.2/app/font/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
+       url('../../2.3.2/app/font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
 .imageBlock{
     
     
@@ -85,5 +95,52 @@ and open the template in the editor.
     font-family: @imageCaptionFontFamily;
     font-weight: @imageCaptionFontWeight;
   }
+  
+  
+  .flexslider  {
+     .flex-direction-nav a {
+          display: block;
+     }
+     
+     .flex-next {
+          font-size: 1px;
+          &:before {
+               display: inline-block;
+               font-family: 'FontAwesome';
+               content:"@{navDirectionIconLeft}";
+               color: '#ff6600';
+               font-size: 30px;
+               padding-left: 10px;
+          }
+     }
+     .flex-prev {
+          font-size: 1px;
+          &:before {
+               display: inline-block;
+               font-family: 'FontAwesome';
+               content:"@{navDirectionIconRight}";
+               color: '#ff6600';
+               font-size: 30px;
+               padding-left: 10px;
+          }
+     }
+     .flex-direction-nav a {
+          width: 30px;
+          height: 30px;
+          overflow: hidden;
+          margin: 0;
+          display: block;
+          background: none;
+          position: absolute;
+          top: 90%;
+          z-index: 10;
+          cursor: pointer;
+          text-indent: inherit;
+          opacity: 1;
+          
+     }
+}
+  
+  
 }
 
