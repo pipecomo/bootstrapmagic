@@ -1,0 +1,89 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24 Feb, 2014, 12:54:17 PM
+    Author     : pipe
+*/
+
+.imageBlock{
+    
+    
+    //caption 
+    .flexslider.inner-slides li p.caption{
+        left:120px
+    }
+    
+    .flexslider.inner-slides li p.tags{
+    font-family: @tagFontFamily;
+    right: @tagRightPosition;
+    left: initial;
+    padding: @tagPadding;
+    color: @tagFontColor;
+    background: @tagBackground;
+    bottom: inherit;
+    top: @tagTopPosition;
+    font-style: @tagFontStyle;
+    text-transform: @tagTextTransform;
+    font-size: @tagFontSize;
+    }
+    
+    .flexslider.inner-slides li div.title-div p.flex-caption{
+    font-size: @imageTitleFontSize;
+    font-weight: @imageTitleFontWeight;
+    line-height: @imageTitleFontSize *1.25;
+    color: @imageTitleFontColor;
+    bottom:inherit;
+    background:@imageTitleBackground;
+    padding: @imageTitlePadding;
+    text-shadow: @imageTitleTextShadow;
+    font-style: @imageTitleFontStyle;
+    font-family: @imageTitleFontFamily;
+    top: @imageTitleTop;
+    left: @imageTitleLeft;
+    position: @imageTitlePosition;
+   
+
+    }
+    
+
+    .flexslider.inner-slides a.btn{ 
+    text-transform: @imageButtonTextTransform; 
+    color: @imageButtonFontColor; 
+    padding: @imageButtonPadding; 
+    background: @imageButtonBackground; 
+    border: @imageButtonBorder;
+    border-radius: @imageButtonBorderRadius; 
+    box-shadow:@imageButtonBoxShadow; 
+    text-shadow: @imageButtonTextShadow; 
+    font-style:@imageButtonFontStyle; 
+    font-weight: @imageButtonFontWeight;  
+    font-family: @imageButtonFontFamily; 
+    font-size: @imageButtonFontSize;
+    
+    }
+    
+    .flexslider.inner-slides li div.title-div a.btn{
+    left:@imageTitleLeft;
+    top:@imageTitleTop + @imageTitleFontSize;
+    position: @imageTitlePosition; 
+    }
+    
+    .flexslider.inner-slides li p.caption{
+    top: @imageCaptionTop;
+    left:@imageCaptionLeft;
+    position:@imageCaptionPosition;
+    bottom: @imageCaptionBottom;
+    background:@imageCaptionBackground;
+    padding: @imageCaptionPadding;
+    width:@imageCaptionWidth;
+    font-size: @imageCaptionFontSize;
+    color: @imageCaptionFontColor;
+    font-style: @imageCaptionFontStyle;
+    font-family: @imageCaptionFontFamily;
+    font-weight: @imageCaptionFontWeight;
+  }
+}
+

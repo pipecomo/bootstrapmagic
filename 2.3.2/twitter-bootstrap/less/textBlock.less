@@ -49,6 +49,14 @@ This is the custom created CSS
      .tablet .container{
          max-width: @tabletWidth; 
         min-width: @phoneWidth +1;
+        // Fixed grid
+  #grid > .core(@gridColumnWidth768, @gridGutterWidth768);
+
+  // Fluid grid
+  #grid > .fluid(@fluidGridColumnWidth768, @fluidGridGutterWidth768);
+
+  // Input grid
+  #grid > .input(@gridColumnWidth768, @gridGutterWidth768);    
          
     }
     
