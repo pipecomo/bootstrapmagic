@@ -1,4 +1,38 @@
 <div class="protected">
+	    <div class=" navbar navbar-static-top navbar-inverse" id="menuTop">
+	        <div class="navbar-inner">
+	            <div class="container">
+	                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                </a>
+	                <a class="brand" href="../index.html" title="Bootrstrap Magic written in AngularJS">Bootstrap Magic</a>
+	                    <ul class="nav">
+	                        <li><a href="../index.html" title="bootstrap themes generator presentation">Intro</a></li>
+	                        <li class="divider-vertical"></li>
+	                        <li ><a href="index.html#!/editor" title="bootstrap themes generator">Editor</a></li>
+	                        <li class="divider-vertical"></li>
+	                    </ul>
+                        <select class="selectpicker" ng-model="sideBarSelection">
+                                        <option value="show" selected>Show Toolbar</option>
+                                        <option value="hide">Hide Toolbar</option>
+                        </select>
+                        <select class="selectpicker" ng-model="widthSelection">
+                                        <option value="1200" selected >1200px and above</option>
+                                        <option value="980">980 px and above</option>
+                                        <option value="768">768 px and above</option>
+                                        <option value="360">360 px and above</option>
+                        </select>
+                        <select class="selectpicker" ng-model="blockSelection">
+                            <option value="Typography" selected>Text Block</option>
+                            <option value="ImageBlock">Image Block</option>
+                        </select>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+<div class="protected">
     <div class="navbar navbar-fixed-bottom" id="menuBottom" class="isEditor">
         <ul>
             <li><button class="btn btn-primary" ng-click="applyLess()">Apply</button></li>
@@ -17,6 +51,7 @@
     <form class="piEditor">
        
         <section ng-repeat="group in variables" class="{{ group.name }}">
+            <div ng-show="blockSelection == group.name">
             <div class="row" class="protected" ng-show="sideBarSelection == 'show'">
                 <div class="span12">
                     <h2 class="groupNameTitle" id="{{ group.name }}">{{ group.name }}</h2>
@@ -25,7 +60,7 @@
             <div class="row">
                 <div class="span4" ng-show="sideBarSelection == 'show'">
                     <div ng-repeat="variable in group.data" class="protected">
-                        <label class="labelTitle">{{variable.key}}</label></td>                
+                        <label class="labelTitle">{{variable.key|labelName}}</label></td>                
                         <div data-ColorPickerApply="autoApplyLess()" class="input {' ap-color-picker: variable.value': colorpicker(variable.type)}" data-color="{{ color(variable.type, variable.value) }}" data-color-format="hex" ng-class="{'input-append color colorpicker' : colorpicker(variable.type)}">
                             <input id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable">
                             <span class="add-on" ng-class="{ 'hidden' : !colorpicker(variable.type)}"><i></i></span>
@@ -36,6 +71,7 @@
                     <div data-ng-include src="getGroupUrl()"></div>
                 </div>
             </div>
+            </div>    
         </section>
     </form>
 </div>

@@ -12,4 +12,10 @@ angular.module('bootstrapVariablesEditor.filters', []).
     return function(input) {
       return input.substring(1);
     }
+  }).
+  filter('labelName', function(){
+      return function(input){
+          var label = input.replace('@','').replace(/([A-Z])/g, ' $1').replace(/^./, function(str){ return str.toUpperCase(); });
+          return label;
+      }
   });
