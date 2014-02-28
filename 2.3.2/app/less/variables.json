@@ -1,6 +1,22 @@
 [
 		
 	{ 
+		"name" : "Brand Colors",
+		"data": [
+			{ "key":"@colorOne", "value":"#000", "type": "color"},
+			{ "key":"@colorTwo", "value":"#428bca", "type": "color"},
+			{ "key":"@colorThree", "value":"#5cb85c", "type": "color"},
+			{ "key":"@colorFour", "value":"#f0ad4e", "type": "color"},
+                        { "key":"@colorFive", "value":"#d9534f", "type": "color"},
+			{ "key":"@colorSix", "value":"#5bc0de", "type": "color"},
+			{ "key":"@colorSeven", "value":"#428bca", "type": "color"},
+			{ "key":"@colorEight", "value":"#5cb85c", "type": "color"},
+			{ "key":"@colorNine", "value":"#f0ad4e", "type": "color"},
+			{ "key":"@colorTen", "value":"#d9534f", "type": "color"}
+		]
+	},
+        
+        { 
 		"name" : "Typography",
 		"data": [
 			
