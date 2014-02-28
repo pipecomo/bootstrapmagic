@@ -87,6 +87,7 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
     
     $scope.applyLess = function (applyAll) {
         var vars = ap_less.getVariables($scope, applyAll);
+   
         less.modifyVars(vars.variables);
 
         WebFont.load({
@@ -163,7 +164,7 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
     }
     $scope.showTheBlock = function (name){
             
-        if(name != 'Brand Colors')
+        if(name != 'Brand Colors' && $scope.blockSelection == name || $scope.blockSelection == 'All')
         {
             return true;
         }

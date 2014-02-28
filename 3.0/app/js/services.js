@@ -184,6 +184,7 @@ angular.module('bootstrapVariablesEditor.services', []).
             type: 'GET',
             dataType: 'JSONP',
             success: function (data) {   
+                
                 for (var i = 0; i < data.items.length; i++ ) {
                     keys.push(data.items[i].family);
                 }

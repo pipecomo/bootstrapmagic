@@ -20,8 +20,12 @@
 		"name" : "Typography",
 		"data": [
 			
+			{"key":"@font-family-sans-serif", "value":"Open Sans", "type": "font"},
+			
+                        
+                        
 			{"key":"@baseFontSize", "value":"14px", "type": "text"},
-			{"key":"@baseFontFamily", "value":"@sansFontFamily", "type": "text"},
+			{"key":"@baseFontFamily", "value":"@font-family-sans-serif", "type": "text"},
 			{"key":"@baseLineHeight", "value":"20px", "type": "text"},
 			
                         {"key":"@paraColor", "value":"#000", "type": "color"},

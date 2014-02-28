@@ -88,7 +88,7 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
     $scope.applyLess = function (applyAll) {
         var vars = ap_less.getVariables($scope, applyAll);
         less.modifyVars(vars.variables);
-
+       
         WebFont.load({
           google: {
             families: vars.fonts

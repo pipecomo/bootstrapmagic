@@ -183,7 +183,8 @@ angular.module('bootstrapVariablesEditor.services', []).
             url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBb_pLbXGeesG8wE32FMtywG4Vsfq6Uk_8",
             type: 'GET',
             dataType: 'JSONP',
-            success: function (data) {   
+            success: function (data) {
+              
                 for (var i = 0; i < data.items.length; i++ ) {
                     keys.push(data.items[i].family);
                 }
