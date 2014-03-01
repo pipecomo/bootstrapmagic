@@ -106,6 +106,7 @@ and open the template in the editor.
     font-style: @tagFontStyle;
     text-transform: @tagTextTransform;
     font-size: @tagFontSize;
+    line-height: @tagLineHeight;
     }
     
     .flexslider.inner-slides li div.title-div p.flex-caption{
@@ -122,7 +123,7 @@ and open the template in the editor.
     top: @imageTitleTop;
     left: @imageTitleLeft;
     position: @imageTitlePosition;
-   
+    line-height: @imageTitleLineHeight;
 
     }
     
@@ -140,7 +141,7 @@ and open the template in the editor.
     font-weight: @imageButtonFontWeight;  
     font-family: @imageButtonFontFamily; 
     font-size: @imageButtonFontSize;
-    
+    line-height: @imageButtonLineHeight;
     }
     
     .flexslider.inner-slides li div.title-div a.btn{
@@ -162,6 +163,7 @@ and open the template in the editor.
     font-style: @imageCaptionFontStyle;
     font-family: @imageCaptionFontFamily;
     font-weight: @imageCaptionFontWeight;
+    line-height: @imageCaptionLineHeight;
   }
   
   
@@ -216,6 +218,40 @@ and open the template in the editor.
           opacity: 1;
           margin-top: -15px;
      }
+     
+    /* Control Nav */
+.flex-control-nav {
+    width: @navPagingBoxWidth; 
+    position: @navPagingPosition; 
+    bottom: @navPagingBottom; 
+    text-align: @navPagingTextAlign; 
+    z-index:@navPagingZindex;
+}
+
+.flex-control-paging li a {
+    margin: @navPagingMargin; 
+    display: inline-block; 
+    zoom: 1; 
+    *display: inline;
+    width: @navPagingWidth; 
+    height: @navPagingHeight; 
+    display: @navPagingDisplay; 
+    background: #666; 
+    border-radius: @navPagingBorderRadius;
+    background: @navPagingBackground; 
+    cursor: pointer; 
+    text-indent: -9999px; 
+    box-shadow: @navPagingBoxShadow;
+}
+.flex-control-paging li a:hover { 
+    background: #333; 
+    background: @navPagingHoverBackground; 
+    }
+.flex-control-paging li a.flex-active { 
+    background: #000; 
+    background: @navPagingActiveBackground; 
+    cursor: default; 
+}
      
      
 }
