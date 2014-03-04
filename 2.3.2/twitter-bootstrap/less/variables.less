@@ -314,11 +314,14 @@
 @phoneWidth: 360px;
 
 //-- text block
+@pageBackground : #fff;
+@pagePadding  : 10px;
     //para variables
 @paraColor: @black;
 @paraFontSize: @baseFontSize;
 @paraFontFamily: 'Open Sans', sans-serif;
 @paraLineHeight: 20px;
+@paraPadding: 0px;
 
 
     // heading variables
@@ -326,7 +329,9 @@
 @headingFontFamily: 'Open Sans', sans-serif;
 @headingLineHeightFactor: 1;
 @headingFontWeight: bold;
+@headingFontStyle: normal;
 @headingColor: @black;
+@headingPadding: 0px;
 
 // button variables
 @btnFontColor: @red;
@@ -338,17 +343,21 @@
 @btnMargin: 5px;
 @btnHoverColor: darken(@btnBackground, 30%);
 @btnFontFamily: 'Open Sans', sans-serif;
+@btnTextTransform: none; 
+@btnBorderRadius: 0; 
+@btnBoxShadow: none; 
+@btnTextShadow: none; 
 
 
 // box variables
-@insetBoxMargin: 40px;
-@insetBoxTopBottomPadding: 25px;
-@insetBoxBorderWidth: 1px;
-@insetBoxBorderColor: black;
-@insetBoxFontColor: black;
-@insetBoxFontSize: 16px;
-@insetBoxFontWeight: bold;
-@insetBoxFontFamily: 'Open Sans', sans-serif;
+@pullQuoteMargin: 40px;
+@pullQuoteTopBottomPadding: 25px;
+@pullQuoteBorderWidth: 1px;
+@pullQuoteBorderColor: black;
+@pullQuoteFontColor: black;
+@pullQuoteFontSize: 16px;
+@pullQuoteFontWeight: bold;
+@pullQuoteFontFamily: 'Open Sans', sans-serif;
 
 // list variables
 @listLeftMargin: 30px;
@@ -423,7 +432,7 @@
 @navWidth: 30px;
 @navHeight: 30px;
 @navColor: #ff6600;
-// navigatin area bottom
+// navigation area bottom
 @navPagingBoxWidth: 100%; 
 @navPagingPosition: absolute; 
 @navPagingBottom: -40px; 

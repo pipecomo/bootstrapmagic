@@ -21,7 +21,8 @@
 		"data": [
 			
 			{"key":"@font-family-sans-serif","group":"global", "value":"Open Sans", "type": "font"},
-			
+			{"key":"@pageBackground","group":"global", "value":"#fff", "type": "color"},
+                        {"key":"@pagePadding","group":"global", "value":"10px", "type": "text"},
                         
                         
 			{"key":"@baseFontSize", "group":"global", "value":"14px", "type": "text"},
@@ -31,24 +32,26 @@
                        
 			
 			{"key":"@headingFontFamily","group":"heading", "value":"@baseFontFamily", "type": "text"}, 
-			{"key":"@headingFontWeight","group":"heading", "value":"bold", "type": "text"},    
+			{"key":"@headingFontWeight","group":"heading", "value":"bold", "type": "fontweight"}, 
+                        {"key":"@headingFontStyle","group":"heading", "value":"normal", "type": "fontstyle"}, 
 			{"key":"@headingColor","group":"heading", "value":"#000", "type": "color"},
                         {"key":"@headingMarginFactor","group":"heading", "value":"1.5", "type": "text"},
                         {"key":"@headingLineHeightFactor","group":"heading", "value":"1", "type": "text"},
+                        {"key":"@headingPadding","group":"heading", "value":"0px", "type": "text"},
                         
                         {"key":"@paraColor","group":"paragraph", "value":"#000", "type": "color"},
                         {"key":"@paraFontFamily","group":"paragraph", "value":"@baseFontFamily", "type": "text"}, 
 			{"key":"@paraLineHeight","group":"paragraph", "value":"20px", "type": "text"},
-                      
+                        {"key":"@paraPadding","group":"paragraph", "value":"0px", "type": "text"},
                        
-                        {"key":"@insetBoxBorderColor","group":"inset", "value":"#e06342", "type": "color"},
-                        {"key":"@insetBoxFontColor","group":"inset", "value":"#000", "type": "color"},
-                        {"key":"@insetBoxMargin","group":"inset", "value":"40px", "type": "text"},    
-                        {"key":"@insetBoxTopBottomPadding","group":"inset", "value":"25px", "type": "text"},    
-                        {"key":"@insetBoxBorderWidth","group":"inset", "value":"1px", "type": "text"},  
-                        {"key":"@insetBoxFontSize","group":"inset", "value":"16px", "type": "text"},
-                        {"key":"@insetBoxFontFamily","group":"inset", "value":"@baseFontFamily", "type": "text"}, 
-                        {"key":"@insetBoxFontWeight","group":"inset", "value":"bold", "type": "text"},
+                        {"key":"@pullQuoteBorderColor","group":"pullQuote", "value":"#e06342", "type": "color"},
+                        {"key":"@pullQuoteFontColor","group":"pullQuote", "value":"#000", "type": "color"},
+                        {"key":"@pullQuoteMargin","group":"pullQuote", "value":"40px", "type": "text"},    
+                        {"key":"@pullQuoteTopBottomPadding","group":"pullQuote", "value":"25px", "type": "text"},    
+                        {"key":"@pullQuoteBorderWidth","group":"pullQuote", "value":"1px", "type": "text"},  
+                        {"key":"@pullQuoteFontSize","group":"pullQuote", "value":"16px", "type": "text"},
+                        {"key":"@pullQuoteFontFamily","group":"pullQuote", "value":"@baseFontFamily", "type": "text"}, 
+                        {"key":"@pullQuoteFontWeight","group":"pullQuote", "value":"bold", "type": "fontweight"},
                         
                         {"key":"@btnBackground", "group":"button", "value":"@white", "type": "color"},
 			{"key":"@btnBackgroundHighlight", "group":"button", "value":"darken(@white, 10%)", "type": "color"},
@@ -56,9 +59,14 @@
                         {"key":"@btnFontColor", "group":"button", "value":"#e06342", "type": "color"},
                         {"key":"@btnPadding", "group":"button", "value":"15px 20px", "type": "text"},
                         {"key":"@btnFontSize", "group":"button", "value":"20px", "type": "text"},
-                        {"key":"@btnFontWeight", "group":"button", "value":"bold", "type": "text"},
+                        {"key":"@btnFontWeight", "group":"button", "value":"bold", "type": "fontweight"},
                         {"key":"@btnMargin", "group":"button", "value":"5px", "type": "text"},
                         {"key":"@btnHoverColor", "group":"button", "value":"darken(@btnBackground, 30%)", "type": "color"},
+                        {"key":"@btnTextTransform", "group":"button", "value":"none", "type": "text"},
+                        {"key":"@btnBorderRadius", "group":"button", "value":"0", "type": "text"},
+                        {"key":"@btnBoxShadow", "group":"button", "value":"none", "type": "text"},
+                        {"key":"@btnTextShadow", "group":"button", "value":"none", "type": "text"},
+                        
                         
                         {"key":"@linkColor", "group":"link", "value":"#e06342", "type": "color"},
                         {"key":"@linkColorHover", "group":"link", "value":"inherit", "type": "color"},

@@ -166,25 +166,14 @@ angular.module('bootstrapVariablesEditor.services', []).
     };
     
     lessEngine.getFonts = function ($scope) {
-    	var keys = [
-            "'Helvetica Neue', Helvetica, Arial",
-            "Georgia",
-            "'Courrier New', Consolas",
-            "Impact",
-            "'Lucida Console', Monaco",
-            "'Palatino Linotype','Book Antiqua'",
-            "'Trebuchet MS'",
-            "Tahoma, Geneva",
-            "Verdana, Geneva",
-    	    "'Times New Roman', Times"
-    	];
+    	var keys = [];
 
         $.ajax({
             url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBb_pLbXGeesG8wE32FMtywG4Vsfq6Uk_8",
             type: 'GET',
             dataType: 'JSONP',
             success: function (data) {
-              
+                
                 for (var i = 0; i < data.items.length; i++ ) {
                     keys.push(data.items[i].family);
                 }
@@ -192,6 +181,68 @@ angular.module('bootstrapVariablesEditor.services', []).
         });
 
     	return keys;
+    };
+    lessEngine.getFontVariants = function($scope, font){
+       
+       var  fontWeights = [];
+      
+        $.ajax({
+            url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBb_pLbXGeesG8wE32FMtywG4Vsfq6Uk_8",
+            type: 'GET',
+            dataType: 'JSONP',
+            success: function (data) {
+             
+              for (var i = 0; i < data.items.length; i++ ) {
+                   if(data.items[i].family === font)
+                   {
+                       
+                       for(var j = 0; j < data.items[i].variants.length; j++ )
+                       {
+                           if(data.items[i].variants[j].match(/\d+/g))  
+                           {
+                              // is just a regular number
+                              if(!isNaN(parseFloat(data.items[i].variants[j])) && isFinite(data.items[i].variants[j]))
+                              {
+                               //create the regular array
+                               if (typeof fontWeights['regular'] === 'undefined') 
+                               fontWeights['regular'] = [];
+                           
+                               fontWeights['regular'].push(data.items[i].variants[j]);
+                              
+                              }
+                              else
+                              {
+                                
+                                    var weight = data.items[i].variants[j].replace(/[^0-9]+/ig,"");
+                                    var style =  data.items[i].variants[j].replace(/[0-9]+/ig,"");
+                                  
+                                    if (typeof fontWeights[style] === 'undefined') 
+                                    fontWeights[style] = [];
+                           
+                                       fontWeights[style].push(weight);
+                              }
+                           }
+                           else
+                            {
+                                if (typeof fontWeights[data.items[i].variants[j]] === 'undefined') 
+                                    fontWeights[data.items[i].variants[j]] = [];
+                                
+                                fontWeights[data.items[i].variants[j]].push('400');
+                             }
+                       }
+                       
+                      
+                   }
+                }
+                $scope.$apply(function(){
+                  $scope.fontWeights = fontWeights;
+  
+                });
+      
+            }
+        });
+        
+          
     };
     
     lessEngine.getVariablesToString = function ($scope) {

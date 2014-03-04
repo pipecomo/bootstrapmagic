@@ -9,6 +9,11 @@ and open the template in the editor.
 
 This is the custom created CSS
 */
+.pageContent{
+    background: @pageBackground;
+    padding: @pagePadding;
+    
+}
 
 .richTextBlock{
     //container widths
@@ -70,6 +75,8 @@ This is the custom created CSS
   font-family: @headingFontFamily;
   color: @headingColor;
   font-weight: @headingFontWeight;
+  padding: @headingPadding;
+  font-style: @headingFontStyle;
  }
 h1 { margin: @baseFontSize * 2.75 * @headingMarginFactor 0px;
      line-height: @baseFontSize * 2.75 * @headingLineHeightFactor;
@@ -88,6 +95,7 @@ h3 { margin: @baseFontSize * 1.75 * @headingMarginFactor 0px;
     color: @paraColor;
     font-family: @paraFontFamily;
     line-height: @paraLineHeight;
+    padding: @paraPadding;
      }
      
      // for the links
@@ -101,16 +109,17 @@ h3 { margin: @baseFontSize * 1.75 * @headingMarginFactor 0px;
   
 }
     // for the inset box 
-    .boxInset{
+    blockquote{
          
-        margin: @insetBoxMargin 0px;
-        border-top: @insetBoxBorderWidth solid @insetBoxBorderColor;
-        border-bottom: @insetBoxBorderWidth solid @insetBoxBorderColor;
-        padding:@insetBoxTopBottomPadding 0px;
-        font-weight: @insetBoxFontWeight;
-        color: @insetBoxFontColor;
-        font-size: @insetBoxFontSize;
-        line-height: @insetBoxFontSize + 5px;
+        margin: @pullQuoteMargin 0px;
+        border-top: @pullQuoteBorderWidth solid @pullQuoteBorderColor;
+        border-bottom: @pullQuoteBorderWidth solid @pullQuoteBorderColor;
+        border-left: 0px;
+        padding:@pullQuoteTopBottomPadding 0px;
+        font-weight: @pullQuoteFontWeight;
+        color: @pullQuoteFontColor;
+        font-size: @pullQuoteFontSize;
+        line-height: @pullQuoteFontSize + 5px;
     }
 
     //for ul & ol lists
@@ -136,7 +145,10 @@ h3 { margin: @baseFontSize * 1.75 * @headingMarginFactor 0px;
   display: inline-block;
   .ie7-inline-block();
   padding: @btnPadding;
-  
+  text-transform: @btnTextTransform; 
+    border-radius: @btnBorderRadius; 
+    box-shadow:@btnBoxShadow; 
+    text-shadow: @btnTextShadow; 
   margin: @btnMargin; // For input.btn
   font-size: @btnFontSize;
   font-color: @btnFontColor;

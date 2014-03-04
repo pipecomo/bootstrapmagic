@@ -29,6 +29,10 @@
                             <option value="ImageBlock">Image Block</option>
                             <option value="All">All</option>
                         </select>
+                        <select class="selectpicker" ng-model="brandColors">
+                              <option value="show" selected>Show Brand Colors</option>
+                            <option value="hide">Hide Brand Colors</option>
+                        </select>
 	            </div>
 	        </div>
 	    </div>
@@ -59,19 +63,19 @@
                          <div  ng-show="showTheOptions(group.name)">
                             <div  ng-show="sideBarSelection == 'show'">
 
-                                     <h2 class="groupNameTitle" id="{{ group.name }}">{{ group.name }}</h2>
-                                    <div  ng-repeat="variable in group.data | groupBy:'group'" class="protected">
-                                        <div id="groupname" >
+                                     <h2 class="groupNameTitle" id="{{ group.name }}" ng-hide="group.name == 'Brand Colors' && brandColors == 'hide'">{{ group.name }}</h2>
+                                    <div  ng-repeat="variable in group.data | groupBy:'group'" class="protected" >
+                                        <div id="groupname" ng-hide="variable.group == 'colors' && brandColors == 'hide'">
                                         <h3 ng-show="variable.group_CHANGED">{{variable.group | labelName | uppercase}}</h3>
-                                        </div>
+                                       
                                         <div id="{{variable.group}}">
                                         <label class="labelTitle">{{variable.key|labelName}}</label>               
                                         <div data-ColorPickerApply="autoApplyLess()" class="input {' ap-color-picker: variable.value': colorpicker(variable.type)}" data-color="{{ color(variable.type, variable.value) }}" data-color-format="hex" ng-class="{'input-append color colorpicker' : colorpicker(variable.type)}">
-                                            <input id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable" ng-change="autoApplyLess()">
-                                            <span class="add-on" ng-class="{ 'hidden' : !colorpicker(variable.type)}"><i></i></span>
+                                            <input id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable" >
+                                             <span class="add-on" ng-class="{ 'hidden' : !colorpicker(variable.type)}"><i></i></span>
                                         </div>
                                         </div>
-                                    
+                                     </div>
                                     </div>
 
                             </div>

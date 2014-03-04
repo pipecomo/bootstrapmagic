@@ -129,11 +129,12 @@ and open the template in the editor.
     
 
     .flexslider.inner-slides a.btn{ 
-    text-transform: @imageButtonTextTransform; 
+    
     color: @imageButtonFontColor; 
     padding: @imageButtonPadding; 
     background: @imageButtonBackground; 
     border: @imageButtonBorder;
+    text-transform: @imageButtonTextTransform; 
     border-radius: @imageButtonBorderRadius; 
     box-shadow:@imageButtonBoxShadow; 
     text-shadow: @imageButtonTextShadow; 
@@ -227,12 +228,14 @@ and open the template in the editor.
     text-align: @navPagingTextAlign; 
     z-index:@navPagingZindex;
 }
-
-.flex-control-paging li a {
-    margin: @navPagingMargin; 
+.flex-control-nav li {
+     margin: @navPagingMargin; 
     display: inline-block; 
     zoom: 1; 
     *display: inline;
+}
+.flex-control-paging li a {
+   
     width: @navPagingWidth; 
     height: @navPagingHeight; 
     display: @navPagingDisplay; 

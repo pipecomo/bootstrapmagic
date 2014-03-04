@@ -25,6 +25,7 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                 var keys = ap_less.getKeys($scope);
                 var icons = ap_less.getUrls();
                 var font = ap_less.getFonts();
+                
                 $timeout(function() {
                     var $colorpicker = $('.colorpicker');
                     $colorpicker.colorpicker().on('changeColor', function(ev){
@@ -59,6 +60,11 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                             source: src,
                             updater: function (item) {
                                 scope.variable.value = item;
+                                   $timeout(function() {
+                                          if ($scope.autoapplyless){
+                                                $scope.autoApplyLess();
+                                                                 }
+                                                 }, 500);
                                 return item;
                             }
                         });
@@ -70,13 +76,17 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
     };
     initLessVariables();
     
-    $scope.autoapplyless = false;
+    $scope.autoapplyless = true;
     
     $scope.autoApplyLess = function (event) {
+        console.log('auto apply called')
         if ($scope.autoapplyless){
             var vars = ap_less.getVariables($scope, false);
             less.modifyVars(vars.variables);
-
+            
+            // added by pipe to get the font variations
+            $scope.getFontVariants(vars.fonts)
+            
             WebFont.load({
               google: {
                 families: vars.fonts
@@ -87,7 +97,7 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
     
     $scope.applyLess = function (applyAll) {
         var vars = ap_less.getVariables($scope, applyAll);
-   
+        
         less.modifyVars(vars.variables);
 
         WebFont.load({
@@ -96,7 +106,48 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
           }
         });
     };
-    
+    $scope.getFontVariants = function(fonts){
+        // works  only for one font
+         ap_less.getFontVariants($scope, fonts[0]);
+       
+         $scope.$watch('fontWeights', function() {
+             // this being done because this variable is outside the scope
+       if (typeof $scope.fontWeights !== 'undefined')
+       { 
+               $('.lessVariable').each( function(index){
+                        var scope = angular.element(this).scope();
+                         if ( scope.variable.type === 'fontstyle') {
+                        	
+                                        var fontstyle = $(this).val();
+                                        var fontstyleSrc = [];
+                        		for (var key in $scope.fontWeights) {
+                                        if(key === 'regular')
+                                        key = 'normal'
+                                        fontstyleSrc.push(key)
+                                        
+                                        }
+                                        console.log(fontstyleSrc)
+                                          $(this).data('typeahead').source = fontstyleSrc;
+                                      }
+                        if(scope.variable.type === 'fontweight'){		
+                        
+                                       if (typeof fontstyle === 'undefined')
+                                        fontstyle = 'regular';   
+                        		var fontweightSrc =    $scope.fontWeights[fontstyle];
+                                          console.log(fontweightSrc)
+                                        $(this).data('typeahead').source = fontweightSrc;
+                               }
+                        		
+                                             	    
+                   
+                       
+                       
+                    });
+       }
+   });
+       
+         
+    }
     $scope.colorpicker = function(type) {
     	return (type == 'color') ? true : false;
     }
@@ -172,6 +223,7 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
     $scope.sideBarSelection = 'show';
     $scope.widthSelection = '1200';
     $scope.blockSelection = 'Typography';
+    $scope.brandColors = 'show';
 
 }
 LessCtrl.$inject = ['$scope', '$http', 'ap_less', '$timeout'];
