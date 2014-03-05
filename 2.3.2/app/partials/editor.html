@@ -71,8 +71,15 @@
                                         <div id="{{variable.group}}">
                                         <label class="labelTitle">{{variable.key|labelName}}</label>               
                                         <div data-ColorPickerApply="autoApplyLess()" class="input {' ap-color-picker: variable.value': colorpicker(variable.type)}" data-color="{{ color(variable.type, variable.value) }}" data-color-format="hex" ng-class="{'input-append color colorpicker' : colorpicker(variable.type)}">
-                                            <input id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable" >
-                                             <span class="add-on" ng-class="{ 'hidden' : !colorpicker(variable.type)}"><i></i></span>
+                                        <!--    for text and color-->
+                                            <input ng-if="variable.type == 'color' || variable.type == 'text'" id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable" >
+                                            <span class="add-on" ng-class="{ 'hidden' : !colorpicker(variable.type)}"><i></i></span>
+                                        <!--    for font-family-->
+                                            <input ng-if="variable.type == 'font'" id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable fontfamily" >
+                                        <!--    for font style-->
+                                            <select ng-if=" variable.type == 'fontstyle'"     data-ng-model="variable.value" data-ng-options="value for value in {{variable.group}}FontStyles" class="span3 lessVariable fontstyle" ng-change="autoApplyLess()"></select>
+                                        <!--    for font weight-->
+                                            <select ng-if="variable.type == 'fontweight'" data-ng-model="variable.value" data-ng-options="value for value in {{variable.group}}FontWeights" class="span3 lessVariable fontweight" ng-change="autoApplyLess()"></select>
                                         </div>
                                         </div>
                                      </div>

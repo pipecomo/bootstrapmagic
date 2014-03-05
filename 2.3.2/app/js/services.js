@@ -182,7 +182,7 @@ angular.module('bootstrapVariablesEditor.services', []).
 
     	return keys;
     };
-    lessEngine.getFontVariants = function($scope, font){
+    lessEngine.getFontVariants = function($scope, fonts){
        
        var  fontWeights = [];
       
@@ -191,9 +191,9 @@ angular.module('bootstrapVariablesEditor.services', []).
             type: 'GET',
             dataType: 'JSONP',
             success: function (data) {
-             
+              for (var k = 0; k < fonts.length; k++ ) {    
               for (var i = 0; i < data.items.length; i++ ) {
-                   if(data.items[i].family === font)
+                   if(data.items[i].family === fonts[k])
                    {
                        
                        for(var j = 0; j < data.items[i].variants.length; j++ )
@@ -204,10 +204,18 @@ angular.module('bootstrapVariablesEditor.services', []).
                               if(!isNaN(parseFloat(data.items[i].variants[j])) && isFinite(data.items[i].variants[j]))
                               {
                                //create the regular array
-                               if (typeof fontWeights['regular'] === 'undefined') 
-                               fontWeights['regular'] = [];
-                           
-                               fontWeights['regular'].push(data.items[i].variants[j]);
+                               if (typeof fontWeights[k] === 'undefined') 
+                               {   
+                                   fontWeights[k] = [];
+                                   
+                                }   
+                                   if (typeof fontWeights[k]['regular'] === 'undefined') 
+                                    {
+                                            
+                                            fontWeights[k]['regular'] = [];
+                                     }
+                                 
+                               fontWeights[k]['regular'].push(data.items[i].variants[j]);
                               
                               }
                               else
@@ -215,28 +223,49 @@ angular.module('bootstrapVariablesEditor.services', []).
                                 
                                     var weight = data.items[i].variants[j].replace(/[^0-9]+/ig,"");
                                     var style =  data.items[i].variants[j].replace(/[0-9]+/ig,"");
-                                  
-                                    if (typeof fontWeights[style] === 'undefined') 
-                                    fontWeights[style] = [];
-                           
-                                       fontWeights[style].push(weight);
+                                   //create the regular array
+                               if (typeof fontWeights[k] === 'undefined') 
+                               {   
+                                   fontWeights[k] = [];
+                               }
+                                   
+                                    if (typeof fontWeights[k][style] === 'undefined') 
+                                    {
+                                           
+                                            fontWeights[k][style] = [];
+                                    }
+                                
+                                   
+                                        fontWeights[k][style].push(weight);
                               }
                            }
                            else
                             {
-                                if (typeof fontWeights[data.items[i].variants[j]] === 'undefined') 
-                                    fontWeights[data.items[i].variants[j]] = [];
-                                
-                                fontWeights[data.items[i].variants[j]].push('400');
+                                 //create the regular array
+                               if (typeof fontWeights[k] === 'undefined') 
+                               {   
+                                   fontWeights[k] = [];
+                               }   
+                                if (typeof fontWeights[k][data.items[i].variants[j]] === 'undefined') 
+                                {
+                                      //  fontWeights[k] = [];
+                                        fontWeights[k][data.items[i].variants[j]] = [];
+                                }
+                             
+                                fontWeights[k][data.items[i].variants[j]].push('400');
                              }
                        }
                        
-                      
+                    
+                    
                    }
                 }
+             
+                 
+            }  
                 $scope.$apply(function(){
-                  $scope.fontWeights = fontWeights;
-  
+                  $scope.fontStylesWeights = fontWeights;
+                     //console.log($scope.fontStylesWeights)
                 });
       
             }

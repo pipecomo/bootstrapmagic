@@ -31,16 +31,18 @@
 			
                        
 			
-			{"key":"@headingFontFamily","group":"heading", "value":"@baseFontFamily", "type": "text"}, 
-			{"key":"@headingFontWeight","group":"heading", "value":"bold", "type": "fontweight"}, 
-                        {"key":"@headingFontStyle","group":"heading", "value":"normal", "type": "fontstyle"}, 
-			{"key":"@headingColor","group":"heading", "value":"#000", "type": "color"},
+			{"key":"@headingFontFamily","group":"heading", "value":"Open Sans", "type": "font"}, 
+			{"key":"@headingFontStyle","group":"heading", "value":"normal", "type": "fontstyle"}, 
+                        {"key":"@headingFontWeight","group":"heading", "value":"700", "type": "fontweight"}, 
+                        {"key":"@headingColor","group":"heading", "value":"#000", "type": "color"},
                         {"key":"@headingMarginFactor","group":"heading", "value":"1.5", "type": "text"},
                         {"key":"@headingLineHeightFactor","group":"heading", "value":"1", "type": "text"},
                         {"key":"@headingPadding","group":"heading", "value":"0px", "type": "text"},
                         
                         {"key":"@paraColor","group":"paragraph", "value":"#000", "type": "color"},
-                        {"key":"@paraFontFamily","group":"paragraph", "value":"@baseFontFamily", "type": "text"}, 
+                        {"key":"@paraFontFamily","group":"paragraph", "value":"Open Sans", "type": "font"}, 
+                        {"key":"@paraFontStyle","group":"paragraph", "value":"normal", "type": "fontstyle"}, 
+                        {"key":"@paraFontWeight","group":"paragraph", "value":"400", "type": "fontweight"}, 
 			{"key":"@paraLineHeight","group":"paragraph", "value":"20px", "type": "text"},
                         {"key":"@paraPadding","group":"paragraph", "value":"0px", "type": "text"},
                        
@@ -50,8 +52,9 @@
                         {"key":"@pullQuoteTopBottomPadding","group":"pullQuote", "value":"25px", "type": "text"},    
                         {"key":"@pullQuoteBorderWidth","group":"pullQuote", "value":"1px", "type": "text"},  
                         {"key":"@pullQuoteFontSize","group":"pullQuote", "value":"16px", "type": "text"},
-                        {"key":"@pullQuoteFontFamily","group":"pullQuote", "value":"@baseFontFamily", "type": "text"}, 
-                        {"key":"@pullQuoteFontWeight","group":"pullQuote", "value":"bold", "type": "fontweight"},
+                        {"key":"@pullQuoteFontFamily","group":"pullQuote", "value":"Open Sans", "type": "font"}, 
+                        {"key":"@pullQuoteFontStyle","group":"pullQuote", "value":"normal", "type": "fontstyle"},
+                        {"key":"@pullQuoteFontWeight","group":"pullQuote", "value":"400", "type": "fontweight"},
                         
                         {"key":"@btnBackground", "group":"button", "value":"@white", "type": "color"},
 			{"key":"@btnBackgroundHighlight", "group":"button", "value":"darken(@white, 10%)", "type": "color"},
@@ -59,11 +62,13 @@
                         {"key":"@btnFontColor", "group":"button", "value":"#e06342", "type": "color"},
                         {"key":"@btnPadding", "group":"button", "value":"15px 20px", "type": "text"},
                         {"key":"@btnFontSize", "group":"button", "value":"20px", "type": "text"},
-                        {"key":"@btnFontWeight", "group":"button", "value":"bold", "type": "fontweight"},
+                        {"key":"@btnFontFamily", "group":"button", "value":"Open Sans", "type": "font"},
+                        {"key":"@btnFontStyle", "group":"button", "value":"normal", "type": "fontstyle"},
+                        {"key":"@btnFontWeight", "group":"button", "value":"700", "type": "fontweight"},
                         {"key":"@btnMargin", "group":"button", "value":"5px", "type": "text"},
                         {"key":"@btnHoverColor", "group":"button", "value":"darken(@btnBackground, 30%)", "type": "color"},
                         {"key":"@btnTextTransform", "group":"button", "value":"none", "type": "text"},
-                        {"key":"@btnBorderRadius", "group":"button", "value":"0", "type": "text"},
+                        {"key":"@btnBorderRadius", "group":"button", "value":"10px", "type": "text"},
                         {"key":"@btnBoxShadow", "group":"button", "value":"none", "type": "text"},
                         {"key":"@btnTextShadow", "group":"button", "value":"none", "type": "text"},
                         

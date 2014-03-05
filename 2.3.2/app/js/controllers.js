@@ -1,9 +1,10 @@
 /* Controllers */
 
 function LessCtrl($scope, $http, ap_less, $timeout) {
-
+   
     $scope.variables = {};
     $scope.fonts = {};
+    $scope.fontStylesWeights ={};
     var initLessVariables = function () {
         $http.get('less/variables.json').success(function(data) {
 
@@ -25,7 +26,8 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                 var keys = ap_less.getKeys($scope);
                 var icons = ap_less.getUrls();
                 var font = ap_less.getFonts();
-                
+               
+               
                 $timeout(function() {
                     var $colorpicker = $('.colorpicker');
                     $colorpicker.colorpicker().on('changeColor', function(ev){
@@ -39,6 +41,14 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                         }, 500);
                         
                     });
+                    $colorpicker.find('input').on('keyup', function(ev){
+                        var element = angular.element(this);
+                        console.log(element.val());
+                       element.parent().colorpicker('setValue', element.val());
+                        
+                    });
+                    
+                    
                     
                     $('.lessVariable').each( function(index){
                         var scope = angular.element(this).scope();
@@ -63,6 +73,7 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                                    $timeout(function() {
                                           if ($scope.autoapplyless){
                                                 $scope.autoApplyLess();
+                                               //$scope.getFontVariants(item);
                                                                  }
                                                  }, 500);
                                 return item;
@@ -85,7 +96,11 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
             less.modifyVars(vars.variables);
             
             // added by pipe to get the font variations
-            $scope.getFontVariants(vars.fonts)
+      
+           
+               $scope.getFontVariants(vars.fonts) 
+            
+            
             
             WebFont.load({
               google: {
@@ -99,6 +114,10 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
         var vars = ap_less.getVariables($scope, applyAll);
         
         less.modifyVars(vars.variables);
+         // added by pipe to get the font variations
+      
+           
+               $scope.getFontVariants(vars.fonts) 
 
         WebFont.load({
           google: {
@@ -107,44 +126,56 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
         });
     };
     $scope.getFontVariants = function(fonts){
-        // works  only for one font
-         ap_less.getFontVariants($scope, fonts[0]);
+     
+     
+         ap_less.getFontVariants($scope, fonts);
        
-         $scope.$watch('fontWeights', function() {
+         $scope.$watch('fontStylesWeights', function() {
+            
              // this being done because this variable is outside the scope
-       if (typeof $scope.fontWeights !== 'undefined')
-       { 
-               $('.lessVariable').each( function(index){
-                        var scope = angular.element(this).scope();
-                         if ( scope.variable.type === 'fontstyle') {
-                        	
-                                        var fontstyle = $(this).val();
-                                        var fontstyleSrc = [];
-                        		for (var key in $scope.fontWeights) {
+       if (typeof $scope.fontStylesWeights !== 'undefined')
+       {  
+               $('.fontfamily').each( function(ffindex){
+                          var scope = angular.element(this).scope();
+                         
+                          var groupname = scope.variable.group;
+                          //console.log(groupname);
+                          $('.fontstyle').each(function(fsindex){
+                              var fontstylescope = angular.element(this).scope();
+                              var fontstylegroupname = fontstylescope.variable.group;
+                              if(groupname === fontstylegroupname)
+                              {
+                                  var fontstyleSrc = [];
+                        		for (var key in $scope.fontStylesWeights[ffindex]) {
                                         if(key === 'regular')
                                         key = 'normal'
+                                    
                                         fontstyleSrc.push(key)
                                         
                                         }
-                                        console.log(fontstyleSrc)
-                                          $(this).data('typeahead').source = fontstyleSrc;
-                                      }
-                        if(scope.variable.type === 'fontweight'){		
+                                        var newStyleName =   groupname+'FontStyles' 
+                                            $scope[newStyleName] = fontstyleSrc;
+                                        var newWeightName =   groupname+'FontWeights'; 
+                                        if(fontstylescope.variable.value === 'normal')
+                                        var  keyName = 'regular';
+                                        else
+                                        var  keyName = fontstylescope.variable.value;
+                                    
+                                         var fontweightSrc =    $scope.fontStylesWeights[ffindex][keyName]; 
+                                          $scope[newWeightName] = fontweightSrc;
+                                        
+                                      
+                              }
+                              
+                              
+                          });
                         
-                                       if (typeof fontstyle === 'undefined')
-                                        fontstyle = 'regular';   
-                        		var fontweightSrc =    $scope.fontWeights[fontstyle];
-                                          console.log(fontweightSrc)
-                                        $(this).data('typeahead').source = fontweightSrc;
-                               }
-                        		
-                                             	    
-                   
-                       
-                       
-                    });
-       }
-   });
+                      });
+         }
+   });                
+                 
+
+
        
          
     }
@@ -224,6 +255,8 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
     $scope.widthSelection = '1200';
     $scope.blockSelection = 'Typography';
     $scope.brandColors = 'show';
+    $scope.headingFontStyles = ['normal'];
+    $scope.headingFontWeights = ['400','700'];
 
 }
 LessCtrl.$inject = ['$scope', '$http', 'ap_less', '$timeout'];
