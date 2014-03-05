@@ -1,0 +1,9 @@
+>> Fix the select box issue, Add new dropdown to header for 'Blocks', Make the content position static.  3 hours
+>> Add more less variables to current config (Element margin and paddings should be available (e.g H1 margin/padding)) 3 hours
+>> Reinstate 'brand colours' options. Up to 10 colours should be available. These colours should auto-complete in ANY colour selector input for blocks . 4 hours
+>> Font selector needs to pull Google Font list via API (?) or good alternative. E.g when selecting the base font I need to be able to choose from all google web fonts
+The Google Webfont loader may be of assistance - https://developers.google.com/fonts/docs/webfont_loader 4 hours
+>> For every text are a WEIGHT and FONT needs to be selectable as well as LINE-HEIGHT. 2 hours
+>> Apply option for 'Auto' is on by default and works when moving from colour selector/input losing focus/enter being pressed. (needs investigation)
+>> Instead of @baseFontSize it should be 'Base font size (@baseFontSize)' - 2 hours
+
