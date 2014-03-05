@@ -43,8 +43,10 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                     });
                     $colorpicker.find('input').on('keyup', function(ev){
                         var element = angular.element(this);
-                        console.log(element.val());
+                       if (element.val().charAt(0) == '#')
                        element.parent().colorpicker('setValue', element.val());
+                      
+                           
                         
                     });
                     
@@ -71,6 +73,17 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                             updater: function (item) {
                                 scope.variable.value = item;
                                    $timeout(function() {
+//                                       if (item.charAt(0) == '@')
+//                                       {
+//                                           console.log(item); 
+//                                         parser = less.Parser({});
+//                                         parser.parse(item, function (error, root) { 
+//                                
+//                                            console.log( root.toCSS() ); 
+//                                            });
+//                                        } 
+                                         
+                                       
                                           if ($scope.autoapplyless){
                                                 $scope.autoApplyLess();
                                                //$scope.getFontVariants(item);
