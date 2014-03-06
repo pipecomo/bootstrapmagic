@@ -53,6 +53,7 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                     
                     
                     $('.lessVariable').each( function(index){
+                        var theElement = $(this);
                         var scope = angular.element(this).scope();
                         switch ( scope.variable.type ) {
                         	case 'icons':
@@ -73,15 +74,11 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                             updater: function (item) {
                                 scope.variable.value = item;
                                    $timeout(function() {
-//                                       if (item.charAt(0) == '@')
-//                                       {
-//                                           console.log(item); 
-//                                         parser = less.Parser({});
-//                                         parser.parse(item, function (error, root) { 
-//                                
-//                                            console.log( root.toCSS() ); 
-//                                            });
-//                                        } 
+                                       if (item.charAt(0) == '@')
+                                       {
+                                           if ($scope.autoapplyless)
+                                            $scope.displayBrandColor(item, theElement);   
+                                        } 
                                          
                                        
                                           if ($scope.autoapplyless){
@@ -138,6 +135,18 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
           }
         });
     };
+    $scope.displayBrandColor = function(color, theElement){
+        
+      
+        $('.colors').each(function(index){
+            var scope = angular.element(this).scope();
+            if(scope.variable.key === color)
+            {
+                 theElement.parent().colorpicker('setValue', scope.variable.value);
+            }
+        })
+    }
+    
     $scope.getFontVariants = function(fonts){
      
      

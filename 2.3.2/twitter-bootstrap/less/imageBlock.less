@@ -176,7 +176,7 @@ and open the template in the editor.
      .flex-next {
           font-size: 1px;
           left: auto;
-            right: 0;
+            right: @navNextMargin;
           &:before {
                display: inline-block;
                font-family: 'FontAwesome';
@@ -189,14 +189,14 @@ and open the template in the editor.
      .flex-prev {
           font-size: 1px;
            right: auto;
-           left: 0;
+           left: @navPrevMargin;
           &:before {
                display: inline-block;
                font-family: 'FontAwesome';
                content:"@{navDirectionIconRight}";
                color: @navColor;
                font-size: @navFontSize;
-               padding-left: 10px;
+              
           }
      }
      
@@ -218,6 +218,14 @@ and open the template in the editor.
           text-indent: inherit;
           opacity: 1;
           margin-top: -15px;
+          background: @navBackground;
+          padding: @navPadding;
+     }
+     .flex-direction-nav a.flex-next{
+         padding-left: 0;
+     }
+     .flex-direction-nav a.flex-prev{
+         padding-right: 0;
      }
      
     /* Control Nav */

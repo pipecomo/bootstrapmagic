@@ -151,6 +151,11 @@
                         {"key":"@navFontSize", "group":"navigation", "value":"30px", "type": "text"},  
                         {"key":"@navDirectionIconLeft", "group":"navigation", "value":"\"\\f054\"", "type": "text"},
                         {"key":"@navDirectionIconRight", "group":"navigation", "value":"\"\\f053\"", "type": "text"},
+                        {"key":"@navBackground", "group":"navigation", "value":"rgba(238,238,238, 0.5)", "type": "text"},   
+                        {"key":"@navPadding", "group":"navigation", "value":"5px 5px 3px", "type": "text"},   
+                        {"key":"@navPrevMargin", "group":"navigation", "value":"0", "type": "text"},   
+                        {"key":"@navNextMargin", "group":"navigation", "value":"0", "type": "text"},   
+                        
                         
 			{"key":"@navPagingBoxWidth", "group":"navigation", "value":"100%", "type": "text"},   
                         {"key":"@navPagingPosition", "group":"navigation", "value":"absolute", "type": "text"},   

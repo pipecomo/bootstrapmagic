@@ -72,7 +72,7 @@
                                         <label class="labelTitle">{{variable.key|labelName}}</label>               
                                         <div data-ColorPickerApply="autoApplyLess()" class="input {' ap-color-picker: variable.value': colorpicker(variable.type)}" data-color="{{ color(variable.type, variable.value) }}" data-color-format="hex" ng-class="{'input-append color colorpicker' : colorpicker(variable.type)}">
                                         <!--    for text and color-->
-                                            <input ng-if="variable.type == 'color' || variable.type == 'text'" id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable" >
+                                            <input ng-if="variable.type == 'color' || variable.type == 'text'" id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable {{variable.group}}" >
                                             <span class="add-on" ng-class="{ 'hidden' : !colorpicker(variable.type)}"><i></i></span>
                                         <!--    for font-family-->
                                             <input ng-if="variable.type == 'font'" id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable fontfamily" >
