@@ -118,7 +118,7 @@
                         
                         
                         {"key":"@imageCaptionFontColor", "group":"imageCaption", "value":"#363636", "type": "color"},
-                        {"key":"@imageCaptionBackground", "group":"imageCaption", "value":"rgba(255,255,255,0.8)", "color": "text"},
+                        {"key":"@imageCaptionBackground", "group":"imageCaption", "value":"rgba(255,255,255,0.8)", "type": "color"},
                         {"key":"@imageCaptionTop", "group":"imageCaption", "value":"inherit", "type": "text"},    
                         {"key":"@imageCaptionLeft", "group":"imageCaption", "value":"0px", "type": "text"},    
                         {"key":"@imageCaptionPosition", "group":"imageCaption", "value":"absolute", "type": "text"},  
