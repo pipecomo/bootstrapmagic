@@ -112,11 +112,7 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
             
             
             
-            WebFont.load({
-              google: {
-                families: vars.fonts
-              }
-            });
+           
         }
     };
     
@@ -129,11 +125,7 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
            
                $scope.getFontVariants(vars.fonts) 
 
-        WebFont.load({
-          google: {
-            families: vars.fonts
-          }
-        });
+     
     };
     $scope.displayBrandColor = function(color, theElement){
         
@@ -193,6 +185,11 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                           });
                         
                       });
+                   WebFont.load({
+              google: {
+                families: $scope.googleFontFamilies
+              }
+            });    
          }
    });                
                  

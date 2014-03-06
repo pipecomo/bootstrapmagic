@@ -185,7 +185,7 @@ angular.module('bootstrapVariablesEditor.services', []).
     lessEngine.getFontVariants = function($scope, fonts){
        
        var  fontWeights = [];
-      
+       var googleFontFamilies = [];
         $.ajax({
             url: "https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyBb_pLbXGeesG8wE32FMtywG4Vsfq6Uk_8",
             type: 'GET',
@@ -194,7 +194,12 @@ angular.module('bootstrapVariablesEditor.services', []).
               for (var k = 0; k < fonts.length; k++ ) {    
               for (var i = 0; i < data.items.length; i++ ) {
                    if(data.items[i].family === fonts[k])
-                   {
+                   {  
+                       // for the google font families
+                       var variants = data.items[i].variants.toString();
+                       var fontData =  data.items[i].family.replace(/ /g,"+")+':'+variants+':latin';   
+                       if (googleFontFamilies.indexOf(fontData) == -1)
+                            googleFontFamilies.push(fontData);
                        
                        for(var j = 0; j < data.items[i].variants.length; j++ )
                        {
@@ -265,7 +270,8 @@ angular.module('bootstrapVariablesEditor.services', []).
             }  
                 $scope.$apply(function(){
                   $scope.fontStylesWeights = fontWeights;
-                     //console.log($scope.fontStylesWeights)
+                  $scope.googleFontFamilies = googleFontFamilies;
+                    // console.log($scope.googleFontFamilies)
                 });
       
             }
