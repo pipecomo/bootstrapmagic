@@ -43,7 +43,14 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
             
         },  
         onBeforeShow: function () {  
-            $(this).ColorPickerSetColor(this.value);  
+        	
+        	if(this.value.charAt(0) == '@')
+        	$scope.getVariableValue(this)
+        	else
+        	$(this).ColorPickerSetColor(this.value);
+        	
+        	//console.log(value);	
+                
              
         }  
     })  
@@ -157,6 +164,20 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
             if(scope.variable.key === $(this).val())
             {
               $(this).next().next().css('backgroundColor', value);
+            }
+        })
+    
+    }
+    
+    $scope.getVariableValue = function(element){
+    var value = element.value
+    $('.colors').each(function(index){
+            	
+            var scope = angular.element(this).scope();
+            if(scope.variable.key === value)
+            {
+            	
+              $(element).ColorPickerSetColor(scope.variable.value); 
             }
         })
     
