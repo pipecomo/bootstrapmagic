@@ -29,26 +29,27 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
                
                
                 $timeout(function() {
-                    var $colorpicker = $('.colorpicker');
-                    $colorpicker.colorpicker().on('changeColor', function(ev){
-                        var scope = angular.element(this).scope();
-                        scope.variable.value = ev.color.toHex();
-
-                        $timeout(function() {
-                            if ($scope.autoapplyless){
-                                $scope.autoApplyLess();
-                            }
-                        }, 500);
-                        
-                    });
-                    $colorpicker.find('input').on('keyup', function(ev){
-                        var element = angular.element(this);
-                       if (element.val().charAt(0) == '#')
-                       element.parent().colorpicker('setValue', element.val());
-                      
-                           
-                        
-                    });
+                   $('.colors').ColorPicker({  
+        onSubmit: function(hsb, hex, rgb, el, parent) {  
+            $(el).val('#'+hex);  
+            $(el).ColorPickerHide();  
+              var scope = angular.element(el).scope();
+             scope.variable.value = '#'+hex;
+             $(el).next().css('backgroundColor', '#'+hex);
+             $scope.updatePreview(el,'#'+hex);
+             
+             if ($scope.autoapplyless)
+              $scope.autoApplyLess();
+            
+        },  
+        onBeforeShow: function () {  
+            $(this).ColorPickerSetColor(this.value);  
+             
+        }  
+    })  
+    .bind('keyup', function(){  
+        $(this).ColorPickerSetColor(this.value);  
+    });  
                     
                     
                     
@@ -127,18 +128,39 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
 
      
     };
+    
     $scope.displayBrandColor = function(color, theElement){
         
       
         $('.colors').each(function(index){
+            var next = angular.element(theElement).next();	
             var scope = angular.element(this).scope();
             if(scope.variable.key === color)
             {
-                 theElement.parent().colorpicker('setValue', scope.variable.value);
+                var value = scope.variable.value;
+                console.log(value)
+                 $(next).next().css('backgroundColor', value);
+               //  if(typeof value !== 'undefined')
+       		//	 $scope.updatePreview(color, value);		
+                 
             }
         })
+        
     }
+    $scope.updatePreview = function(element, value){
     
+               var scope = angular.element(element).scope();
+              
+    	$('.colors').each(function(index){
+            	
+           
+            if(scope.variable.key === $(this).val())
+            {
+              $(this).next().next().css('backgroundColor', value);
+            }
+        })
+    
+    }
     $scope.getFontVariants = function(fonts){
      
      
@@ -283,4 +305,6 @@ LessCtrl.$inject = ['$scope', '$http', 'ap_less', '$timeout'];
 function PageCtrl($scope, $http, ap_less) {
     }
 PageCtrl.$inject = ['$scope', '$http', 'ap_less'];
+
+ 
    
