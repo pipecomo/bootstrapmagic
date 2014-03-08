@@ -101,6 +101,7 @@
 	border: 1px solid #2f2f2f !important;
 	background-color:  #121212 !important;
 	line-height: 10px !important;
+	border-radius: 0;
 }
 .colorpicker_hex {
 	position: absolute;
