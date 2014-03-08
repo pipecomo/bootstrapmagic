@@ -33,7 +33,10 @@
 			
 			{"key":"@headingFontFamily","group":"heading", "value":"Open Sans", "type": "font"}, 
 			{"key":"@headingFontStyle","group":"heading", "value":"normal", "type": "fontstyle"}, 
-                        {"key":"@headingFontWeight","group":"heading", "value":"700", "type": "fontweight"}, 
+                        {"key":"@headingFontWeight","group":"heading", "value":"700", "type": "fontweight"},
+                        {"key":"@h1FontSizeFactor","group":"heading", "value":"2.75", "type": "text"},
+                        {"key":"@h2FontSizeFactor","group":"heading", "value":"2.25", "type": "text"},
+                        {"key":"@h3FontSizeFactor","group":"heading", "value":"1.75", "type": "text"},
                         {"key":"@headingColor","group":"heading", "value":"#000", "type": "color"},
                         {"key":"@headingMarginFactor","group":"heading", "value":"1.5", "type": "text"},
                         {"key":"@headingLineHeightFactor","group":"heading", "value":"1", "type": "text"},

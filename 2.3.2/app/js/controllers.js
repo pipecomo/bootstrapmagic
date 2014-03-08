@@ -145,10 +145,9 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
             if(scope.variable.key === color)
             {
                 var value = scope.variable.value;
-                console.log(value)
+               
                  $(next).next().css('backgroundColor', value);
-               //  if(typeof value !== 'undefined')
-       		//	 $scope.updatePreview(color, value);		
+               	
                  
             }
         })

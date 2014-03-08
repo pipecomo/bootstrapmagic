@@ -78,14 +78,20 @@ This is the custom created CSS
   padding: @headingPadding;
   font-style: @headingFontStyle;
  }
-h1 { margin: @baseFontSize * 2.75 * @headingMarginFactor 0px;
-     line-height: @baseFontSize * 2.75 * @headingLineHeightFactor;
+h1 { 
+     font-size:  @baseFontSize * @h1FontSizeFactor; 
+     margin: @baseFontSize * @h1FontSizeFactor * @headingMarginFactor 0px;
+     line-height: @baseFontSize * @h1FontSizeFactor * @headingLineHeightFactor;
 } 
-h2 { margin: @baseFontSize * 2.25 * @headingMarginFactor 0px; 
-     line-height: @baseFontSize * 2.75 * @headingLineHeightFactor;
+h2 { 
+    font-size:  @baseFontSize * @h2FontSizeFactor;  
+     margin: @baseFontSize * @h2FontSizeFactor * @headingMarginFactor 0px; 
+     line-height: @baseFontSize * @h2FontSizeFactor * @headingLineHeightFactor;
 } 
-h3 { margin: @baseFontSize * 1.75 * @headingMarginFactor 0px;
-     line-height: @baseFontSize * 2.75 * @headingLineHeightFactor;
+h3 { 
+    font-size:  @baseFontSize * @h3FontSizeFactor;  
+     margin: @baseFontSize * @h3FontSizeFactor * @headingMarginFactor 0px;
+     line-height: @baseFontSize * @h3FontSizeFactor * @headingLineHeightFactor;
 } 
    
 // for the paragraph
