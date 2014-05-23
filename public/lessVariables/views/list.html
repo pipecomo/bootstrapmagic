@@ -1,0 +1,22 @@
+<section data-ng-controller="LessVariablesController" data-ng-init="find()">
+	
+		<div data-ng-repeat="lessVariable in lessVariables">
+			
+                    <div class="row">
+			<div class="pull-left"><a data-ng-href="#!/lessVariables/{{lessVariable._id}}">{{lessVariable.name}}</a></div>
+                        <div class="pull-left">: {{lessVariable.property}}</div>
+                        <div  class="pull-right" data-ng-show="global.user._id == lessVariable.user._id">
+                            <a class="btn" href="/#!/lessVariables/{{lessVariable._id}}/edit">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                            </a>
+                            <a class="btn" data-ng-click="remove();">
+                                <i class="glyphicon glyphicon-trash"></i>
+                            </a>
+                        </div>
+                        
+                        <span class="pull-right">{{lessVariable.user.name}}, {{lessVariable.created | date:'medium'}}</span> 
+                    </div>	
+		</div>
+	
+	<h1 data-ng-hide="!lessVariables || lessVariables.length">No lessVariables yet. <br> Why don't you <a href="/#!/lessVariables/create">Create One</a>?</h1>
+</section>

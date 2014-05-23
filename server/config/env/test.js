@@ -7,9 +7,9 @@ module.exports = {
         name: 'MEAN - A Modern Stack - Test'
     },
     facebook: {
-        clientID: 'APP_ID',
-        clientSecret: 'APP_SECRET',
-        callbackURL: 'http://localhost:3000/auth/facebook/callback'
+        clientID: '825736117455744',
+        clientSecret: '2014065fb9e3b6ef0d5e5c51066fe5c6',
+        callbackURL: 'http://localhost:3001/auth/facebook/callback'
     },
     twitter: {
         clientID: 'CONSUMER_KEY',
