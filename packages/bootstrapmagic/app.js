@@ -27,7 +27,7 @@ Bootstrapmagic.register(function(app, auth, database) {
     
     //Adding jquery to the mean project
 Bootstrapmagic.aggregateAsset('js','less.js');
-Bootstrapmagic.aggregateAsset('js','jquery-1.8.3.min.js');
+//Bootstrapmagic.aggregateAsset('js','jquery-1.8.3.min.js');
 Bootstrapmagic.aggregateAsset('js','bootstrap.js');
 Bootstrapmagic.aggregateAsset('js','less-1.3.3.js');
 Bootstrapmagic.aggregateAsset('js','colorpicker.js');

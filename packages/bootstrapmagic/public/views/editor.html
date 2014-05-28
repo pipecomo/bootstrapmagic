@@ -14,25 +14,7 @@
 	                        <li ><a href="index.html#!/editor" title="bootstrap themes generator">Editor</a></li>
 	                        <li class="divider-vertical"></li>
 	                    </ul>
-                        <select class="selectpicker" ng-model="sideBarSelection">
-                                        <option value="show" selected>Show Toolbar</option>
-                                        <option value="hide">Hide Toolbar</option>
-                        </select>
-                        <select class="selectpicker" ng-model="widthSelection">
-                                        <option value="1200" selected >1200px and above</option>
-                                        <option value="980">980 px and above</option>
-                                        <option value="768">768 px and above</option>
-                                        <option value="360">360 px and above</option>
-                        </select>
-                        <select class="selectpicker" ng-model="blockSelection">
-                            <option value="Typography" selected>Text Block</option>
-                            <option value="ImageBlock">Image Block</option>
-                            <option value="All">All</option>
-                        </select>
-                        <select class="selectpicker" ng-model="brandColors">
-                              <option value="show" selected>Show Brand Colors</option>
-                            <option value="hide">Hide Brand Colors</option>
-                        </select>
+                       
 	            </div>
 	        </div>
 	    </div>
@@ -54,11 +36,34 @@
 
 
     <form class="piEditor">
-        <div >
+        <div>
             <div class="container">
             <section class="row" ng-controller="BootstrapmagicController" >
+                
+                        <select class="selectpicker" ng-model="sideBarSelection">
+                                        <option value="show" selected>Show Toolbar</option>
+                                        <option value="hide">Hide Toolbar</option>
+                        </select>
+                
+                        <select class="selectpicker" ng-model="widthSelection">
+                                        <option value="1200" selected >1200px and above</option>
+                                        <option value="980">980 px and above</option>
+                                        <option value="768">768 px and above</option>
+                                        <option value="360">360 px and above</option>
+                        </select>
+                        
+                        <select class="selectpicker" ng-model="blockSelection">
+                            <option value="Typography" selected>Text Block</option>
+                            <option value="ImageBlock">Image Block</option>
+                            <option value="All">All</option>
+                        </select>
+                        
+                        <select class="selectpicker" ng-model="brandColors">
+                              <option value="show" selected>Show Brand Colors</option>
+                            <option value="hide">Hide Brand Colors</option>
+                        </select>      
                 <div class="span4">
-                                       
+                                 
                     <div ng-repeat="group in variables" class="{{ group.name }}">
                          <div  ng-show="showTheOptions(group.name)">
                             <div  ng-show="sideBarSelection == 'show'">
