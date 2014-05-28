@@ -1,0 +1,122 @@
+<!--<div class="protected" ng-controller="BootstrapmagicController">
+	    <div class=" navbar navbar-static-top navbar-inverse" id="menuTop">
+	        <div class="navbar-inner">
+	            <div class="container">
+	                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                <span class="icon-bar"></span>
+	                </a>
+	                <a class="brand" href="../index.html" title="Bootrstrap Magic written in AngularJS">Bootstrap Magic</a>
+	                    <ul class="nav">
+	                        <li><a href="../index.html" title="bootstrap themes generator presentation">Intro</a></li>
+	                        <li class="divider-vertical"></li>
+	                        <li ><a href="index.html#!/editor" title="bootstrap themes generator">Editor</a></li>
+	                        <li class="divider-vertical"></li>
+	                    </ul>
+                        <select class="selectpicker" ng-model="sideBarSelection">
+                                        <option value="show" selected>Show Toolbar</option>
+                                        <option value="hide">Hide Toolbar</option>
+                        </select>
+                        <select class="selectpicker" ng-model="widthSelection">
+                                        <option value="1200" selected >1200px and above</option>
+                                        <option value="980">980 px and above</option>
+                                        <option value="768">768 px and above</option>
+                                        <option value="360">360 px and above</option>
+                        </select>
+                        <select class="selectpicker" ng-model="blockSelection">
+                            <option value="Typography" selected>Text Block</option>
+                            <option value="ImageBlock">Image Block</option>
+                            <option value="All">All</option>
+                        </select>
+                        <select class="selectpicker" ng-model="brandColors">
+                              <option value="show" selected>Show Brand Colors</option>
+                            <option value="hide">Hide Brand Colors</option>
+                        </select>
+	            </div>
+	        </div>
+	    </div>
+	</div>-->
+<div class="protected">
+    <div class="navbar navbar-fixed-bottom" id="menuBottom" class="isEditor">
+        <ul>
+            <li><button class="btn btn-primary" ng-click="applyLess()">Apply</button></li>
+            <li><label class="checkbox"><input type="checkbox" name="cssAutoapplyless" data-ng-model="autoapplyless">Auto</label></li>
+            <li><button class="btn btn-info" ng-click="saveLessVariables()">Save Less Variables</button></li>
+            <li><button class="btn btn-success" ng-click="saveCSS()">Save CSS</button></li>
+            <li><label class="checkbox"><input type="checkbox" name="cssMinified" data-ng-model="minified">Minified</label></li>
+            <li><button class="btn btn-warning" href="#myModal" role="button" data-toggle="modal">Import Less Variables</button></li>
+            <li><button class="btn" ng-click="resetLessVariables()">Reset</button></li>
+        </ul>
+        <span class="sign">Handmade by <a href="http://www.pikock.com" title="create your website easily">Pikock</a> x <a href="http://www.autreplanete.com/" title="web agency paris">Autre planète</a> in Paris.</span>
+    </div>
+</div>
+
+
+    <form class="piEditor">
+        <div >
+            <div class="container">
+            <section class="row" ng-controller="BootstrapmagicController" >
+                <div class="span4">
+                                       
+                    <div ng-repeat="group in variables" class="{{ group.name }}">
+                         <div  ng-show="showTheOptions(group.name)">
+                            <div  ng-show="sideBarSelection == 'show'">
+
+                                     <h2 class="groupNameTitle" id="{{ group.name }}" ng-hide="group.name == 'Brand Colors' && brandColors == 'hide'">{{ group.name }}</h2>
+                                    <div  ng-repeat="variable in group.data | groupBy:'group'" class="protected" >
+                                        <div id="groupname" ng-hide="variable.group == 'colors' && brandColors == 'hide'">
+                                        <h3 ng-show="variable.group_CHANGED">{{variable.group | labelName | uppercase}}</h3>
+                                       
+                                        <div id="{{variable.group}}">
+                                        <label class="labelTitle">{{variable.key|labelName}}</label>               
+                                        <div>
+                                        <!--    for color-->
+                                            <input ng-if="variable.type == 'color'" id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable colors" ><div ng-if="variable.type == 'color'" class="colorPreview pull-right" style="background-color:{{variable.value}}; margin-right:60px"></div>
+                                         <!--    for text-->
+                                            <input ng-if="variable.type == 'text'" id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable {{variable.group}}" >  
+                                        <!--    for font-family-->
+                                            <input ng-if="variable.type == 'font'" id="appendedDropdownButton" type="text" data-ng-model="variable.value" class="span3 lessVariable fontfamily" >
+                                        <!--    for font style-->
+                                            <select ng-if=" variable.type == 'fontstyle'"     data-ng-model="variable.value" data-ng-options="value for value in {{variable.group}}FontStyles" class="span3 lessVariable fontstyle" ng-change="autoApplyLess()"></select>
+                                        <!--    for font weight-->
+                                            <select ng-if="variable.type == 'fontweight'" data-ng-model="variable.value" data-ng-options="value for value in {{variable.group}}FontWeights" class="span3 lessVariable fontweight" ng-change="autoApplyLess()"></select>
+                                        </div>
+                                        </div>
+                                     </div>
+                                    </div>
+
+                            </div>
+                        </div>   
+                    </div>
+                </div>
+
+                <div class="span8">
+                      <div ng-repeat="group in variables" class="{{ group.name }}">
+                            <div  ng-show="showTheBlock(group.name)">
+                                <div data-ng-include src="getGroupUrl()"></div>
+                            </div>
+                      </div>     
+                </div>
+            </section>
+           </div>
+       </div>        
+    </form>
+	
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		<h3 id="myModalLabel"><span class="apico games apico-cloud-upload"></span>Import your Less Variables</h3>
+	</div>
+	<div class="modal-body">
+		<p>Add your less variables to Bootstrap Magic.</p>
+		<textarea ng-model="importedVariables" rows="10" style="width: 97%" placeholder="Example @textColor : #242424;"></textarea>
+	</div>
+	<div class="modal-footer">
+		<button  data-dismiss="modal" aria-hidden="true" class="btn btn-primary" ng-click="importLessVariables(importedVariables)">Import</button>
+	</div>
+</div>
+
+<div id="scrollTop" scroll-top="">↑</div>

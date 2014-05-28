@@ -1,0 +1,272 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 24 Feb, 2014, 12:54:17 PM
+    Author     : pipe
+*/
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../../2.3.2/app/font/fontawesome-webfont.eot?v=3.2.1');
+  src: url('../../2.3.2/app/font/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), 
+       url('../../2.3.2/app/font/fontawesome-webfont.woff?v=3.2.1') format('woff'), 
+       url('../../2.3.2/app/font/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), 
+       url('../../2.3.2/app/font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
+    -webkit-font-smoothing: antialiased;
+}
+.imageBlock{
+    
+     //container widths
+    .widescreen .container{
+        min-width: @widescreenWidth;
+         // Fixed grid
+  #grid > .core(@gridColumnWidth1200, @gridGutterWidth1200);
+
+  // Fluid grid
+  #grid > .fluid(@fluidGridColumnWidth1200, @fluidGridGutterWidth1200);
+
+  // Input grid
+  #grid > .input(@gridColumnWidth1200, @gridGutterWidth1200);
+
+  // Thumbnails
+  .thumbnails {
+    margin-left: -@gridGutterWidth1200;
+  }
+  .thumbnails > li {
+    margin-left: @gridGutterWidth1200;
+  }
+  .row-fluid .thumbnails {
+    margin-left: 0;
+  }
+   
+   
+.span4 .flexslider .flxinnerbx{display:none !important;}
+
+    
+    
+    }
+    .desktop .container{
+        max-width: @widescreenWidth -1;
+        min-width: @desktopWidth;
+    // Fixed grid
+  #grid > .core(@gridColumnWidth, @gridGutterWidth);
+
+  // Fluid grid
+  #grid > .fluid(@fluidGridColumnWidth, @fluidGridGutterWidth);
+
+  // Input grid
+  #grid > .input(@gridColumnWidth, @gridGutterWidth);    
+    .span4 .flexslider.inner-slides li p.tags{display:none !important;}
+.span4 .flexslider .flxinnerbx{display:none !important;}
+.span4 .flexslider.inner-slides li p.caption{display:none !important;}
+    
+    }
+     .tablet .container{
+         max-width: @tabletWidth; 
+        min-width: @phoneWidth +1;
+        // Fixed grid
+  #grid > .core(@gridColumnWidth768, @gridGutterWidth768);
+
+  // Fluid grid
+  #grid > .fluid(@fluidGridColumnWidth768, @fluidGridGutterWidth768);
+
+  // Input grid
+  #grid > .input(@gridColumnWidth768, @gridGutterWidth768);    
+         
+    .span10 .flexslider{margin: 0 auto;}
+     }
+    
+    .phone .container{
+        max-width: @phoneWidth; 
+    
+    .flexslider .flxinnerbx{display:none !important;}
+    .flexslider.inner-slides li p.tags{display:none !important;}
+    
+     
+    }
+    
+    //caption 
+    .flexslider.inner-slides li p.caption{
+        left:120px
+    }
+    
+    .flexslider.inner-slides li p.tags{
+    font-family: @tagFontFamily;
+    right: @tagRightPosition;
+    left: initial;
+    padding: @tagPadding;
+    color: @tagFontColor;
+    background: @tagBackground;
+    bottom: inherit;
+    top: @tagTopPosition;
+    font-style: @tagFontStyle;
+    text-transform: @tagTextTransform;
+    font-size: @tagFontSize;
+    line-height: @tagLineHeight;
+    }
+    
+    .flexslider.inner-slides li div.title-div p.flex-caption{
+    font-size: @imageTitleFontSize;
+    font-weight: @imageTitleFontWeight;
+    line-height: @imageTitleFontSize *1.25;
+    color: @imageTitleFontColor;
+    bottom:inherit;
+    background:@imageTitleBackground;
+    padding: @imageTitlePadding;
+    text-shadow: @imageTitleTextShadow;
+    font-style: @imageTitleFontStyle;
+    font-family: @imageTitleFontFamily;
+    top: @imageTitleTop;
+    left: @imageTitleLeft;
+    position: @imageTitlePosition;
+    line-height: @imageTitleLineHeight;
+
+    }
+    
+
+    .flexslider.inner-slides a.btn{ 
+    
+    color: @imageButtonFontColor; 
+    padding: @imageButtonPadding; 
+    background: @imageButtonBackground; 
+    border: @imageButtonBorder;
+    text-transform: @imageButtonTextTransform; 
+    border-radius: @imageButtonBorderRadius; 
+    box-shadow:@imageButtonBoxShadow; 
+    text-shadow: @imageButtonTextShadow; 
+    font-style:@imageButtonFontStyle; 
+    font-weight: @imageButtonFontWeight;  
+    font-family: @imageButtonFontFamily; 
+    font-size: @imageButtonFontSize;
+    line-height: @imageButtonLineHeight;
+    }
+    
+    .flexslider.inner-slides li div.title-div a.btn{
+    left:@imageTitleLeft;
+    top:@imageTitleTop + @imageTitleFontSize;
+    position: @imageTitlePosition; 
+    }
+    
+    .flexslider.inner-slides li p.caption{
+    top: @imageCaptionTop;
+    left:@imageCaptionLeft;
+    position:@imageCaptionPosition;
+    bottom: @imageCaptionBottom;
+    background:@imageCaptionBackground;
+    padding: @imageCaptionPadding;
+    width:@imageCaptionWidth;
+    font-size: @imageCaptionFontSize;
+    color: @imageCaptionFontColor;
+    font-style: @imageCaptionFontStyle;
+    font-family: @imageCaptionFontFamily;
+    font-weight: @imageCaptionFontWeight;
+    line-height: @imageCaptionLineHeight;
+  }
+  
+  
+  .flexslider  {
+     .flex-direction-nav a {
+          display: block;
+     }
+     
+     .flex-next {
+          font-size: 1px;
+          left: auto;
+            right: @navNextMargin;
+          &:before {
+               display: inline-block;
+               font-family: 'FontAwesome';
+               content:"@{navDirectionIconLeft}";
+               color: @navColor;
+               font-size: @navFontSize;
+               padding-left: 10px;
+          }
+     }
+     .flex-prev {
+          font-size: 1px;
+           right: auto;
+           left: @navPrevMargin;
+          &:before {
+               display: inline-block;
+               font-family: 'FontAwesome';
+               content:"@{navDirectionIconRight}";
+               color: @navColor;
+               font-size: @navFontSize;
+              
+          }
+     }
+     
+     .flex-direction-nav li {
+         position: static
+     }
+     .flex-direction-nav a {
+          width: @navWidth;
+          height: @navHeight;
+          overflow: hidden;
+          margin: 0;
+          display: block;
+          background: none;
+          line-height: 1;
+          position: absolute;
+          top: 50%;
+          z-index: 10;
+          cursor: pointer;
+          text-indent: inherit;
+          opacity: 1;
+          margin-top: -15px;
+          background: @navBackground;
+          padding: @navPadding;
+     }
+     .flex-direction-nav a.flex-next{
+         padding-left: 0;
+     }
+     .flex-direction-nav a.flex-prev{
+         padding-right: 0;
+     }
+     
+    /* Control Nav */
+.flex-control-nav {
+    width: @navPagingBoxWidth; 
+    position: @navPagingPosition; 
+    bottom: @navPagingBottom; 
+    text-align: @navPagingTextAlign; 
+    z-index:@navPagingZindex;
+}
+.flex-control-nav li {
+     margin: @navPagingMargin; 
+    display: inline-block; 
+    zoom: 1; 
+    *display: inline;
+}
+.flex-control-paging li a {
+   
+    width: @navPagingWidth; 
+    height: @navPagingHeight; 
+    display: @navPagingDisplay; 
+    background: #666; 
+    border-radius: @navPagingBorderRadius;
+    background: @navPagingBackground; 
+    cursor: pointer; 
+    text-indent: -9999px; 
+    box-shadow: @navPagingBoxShadow;
+}
+.flex-control-paging li a:hover { 
+    background: #333; 
+    background: @navPagingHoverBackground; 
+    }
+.flex-control-paging li a.flex-active { 
+    background: #000; 
+    background: @navPagingActiveBackground; 
+    cursor: default; 
+}
+     
+     
+}
+  
+  
+}
+
