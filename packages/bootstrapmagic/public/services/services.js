@@ -271,7 +271,7 @@ angular.module('mean.bootstrapmagic').
                 $scope.$apply(function(){
                   $scope.fontStylesWeights = fontWeights;
                   $scope.googleFontFamilies = googleFontFamilies;
-                     console.log($scope.googleFontFamilies)
+                     //console.log($scope.googleFontFamilies)
                 });
       
             }

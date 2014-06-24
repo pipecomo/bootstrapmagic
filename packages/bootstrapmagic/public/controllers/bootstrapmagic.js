@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$scope' , '$http', 'ap_less', '$timeout', 'Global',
-  function($scope, $http, ap_less, $timeout, Global, Bootstrapmagic) { 
+angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$scope' , '$http', 'ap_less', '$timeout', 'Global','Versions','$location','$stateParams',
+  function($scope, $http, ap_less, $timeout, Global, Versions, $location,$stateParams) { 
     $scope.global = Global;
     $scope.bootstrapmagic = {name:'bootstrapmagic'};
     
@@ -19,7 +19,7 @@ angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$
                     };
                   }
             };
-            
+            console.log(data);
             $scope.variables = data;
             $timeout(function() {
                 $scope.applyLess(false);
@@ -112,31 +112,24 @@ angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$
     
     $scope.autoApplyLess = function (event) {
         console.log('auto apply called')
-        if ($scope.autoapplyless){
+          if ($scope.autoapplyless){
             var vars = ap_less.getVariables($scope, false);
-            less.modifyVars(vars.variables);
-            
+           less.modifyVars(vars.variables);
+            console.log(vars.variables);
             // added by pipe to get the font variations
-      
-           
-               $scope.getFontVariants(vars.fonts) 
+          $scope.getFontVariants(vars.fonts) 
             
-            
-            
-           
         }
     };
     
     $scope.applyLess = function (applyAll) {
+        console.log('apply less called');
         var vars = ap_less.getVariables($scope, applyAll);
-        
+        console.log(vars.variables)
         less.modifyVars(vars.variables);
-         // added by pipe to get the font variations
-      
-           
-               $scope.getFontVariants(vars.fonts) 
-
-     
+        $scope.getFontVariants(vars.fonts) 
+        
+            
     };
     
     $scope.displayBrandColor = function(color, theElement){
@@ -255,6 +248,8 @@ angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$
         $scope.applyLess();
     });
     
+   
+    
     $scope.setIsViewLoading = function(val) {
         $scope.isViewLoading = val;
     };
@@ -321,13 +316,67 @@ angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$
     $scope.brandColors = 'show';
     $scope.headingFontStyles = ['normal'];
     $scope.headingFontWeights = ['400','700'];
+    $scope.autoUpdate = true;
     
+      
+      //version creation
+      $scope.createVersion = function() {
+        var vars = ap_less.getVariables($scope, false);
+       // console.log(vars);
+        var version = new Versions({
+            title: this.title,
+            description: this.description,
+            variables: vars
+        });
+       //console.log(version);
+        version.$save(function(response) {
+           
+            //$location.path('versions/' + response._id);
+            $location.path('versions');
+        });
+
+        this.title = '';
+        this.description = '';
+    };
+    //version updation
+    $scope.updateVersion = function() {
+          console.log('update version');
+           var vars = ap_less.getVariables($scope, true);
+            console.log(vars.variables);
+      var version = $scope.version;
+//     
+//      console.log(version);
+       version.variables = vars;
+//      
+//      //  console.log(version);
+        if (!version.updated) {
+            version.updated = [];
+        }
+        version.updated.push(new Date().getTime());
+
+        version.$update(function() {
+            $location.path('editor/' + version._id);
+        });
+    };
+    //fnd the version
+     $scope.findOne = function() {
+        Versions.get({
+            versionId: $stateParams.versionId
+        }, function(version) {
+            $scope.version = version;
+            console.log('called from the db');
+            console.log(version.variables.variables);
+            console.log('setting the variables');
+            ap_less.setVariables($scope,version.variables.variables);
+           // ap_less.setVariables($scope,version.variables.fonts);
+        });
+    };
 
   }
 ]);
 /* Controllers */
 
-function LessCtrl($scope, $http, ap_less, $timeout) {
+//function LessCtrl($scope, $http, ap_less, $timeout) {
 //   
 //    $scope.variables = {};
 //    $scope.fonts = {};
@@ -645,13 +694,13 @@ function LessCtrl($scope, $http, ap_less, $timeout) {
 //    $scope.brandColors = 'show';
 //    $scope.headingFontStyles = ['normal'];
 //    $scope.headingFontWeights = ['400','700'];
-
-}
-LessCtrl.$inject = ['$scope', '$http', 'ap_less', '$timeout'];
-
-function PageCtrl($scope, $http, ap_less) {
-    }
-PageCtrl.$inject = ['$scope', '$http', 'ap_less'];
+//
+//}
+//LessCtrl.$inject = ['$scope', '$http', 'ap_less', '$timeout'];
+//
+//function PageCtrl($scope, $http, ap_less) {
+//    }
+//PageCtrl.$inject = ['$scope', '$http', 'ap_less'];
 
  
    

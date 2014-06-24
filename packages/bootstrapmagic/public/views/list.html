@@ -1,0 +1,22 @@
+<section data-ng-controller="VersionsController" data-ng-init="find()">
+	
+		<div data-ng-repeat="version in versions">
+			
+                    <div class="row">
+			<div class="pull-left"><a data-ng-href="#!/versions/{{version._id}}">{{version.name}}</a></div>
+                        <div class="pull-left">: {{version.title}}</div>
+                        <div  class="pull-right" data-ng-show="global.user._id == version.user._id">
+                            <a class="btn" href="/#!/versions/{{version._id}}/edit">
+                                    <i class="glyphicon glyphicon-edit"></i>
+                            </a>
+                            <a class="btn" data-ng-click="remove(version);">
+                                <i class="glyphicon glyphicon-trash"></i>
+                            </a>
+                        </div>
+                        
+                        <span class="pull-right">{{version.user.name}}, {{version.created | date:'medium'}}</span> 
+                    </div>	
+		</div>
+	
+	<h1 data-ng-hide="!versions || versions.length">No versions yet. <br> Why don't you <a href="/#!/versions/create">Create One</a>?</h1>
+</section>
