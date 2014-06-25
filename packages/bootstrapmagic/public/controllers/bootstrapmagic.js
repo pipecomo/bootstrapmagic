@@ -19,6 +19,7 @@ angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$
                     };
                   }
             };
+            console.log('called from the json file');
             console.log(data);
             $scope.variables = data;
             $timeout(function() {
@@ -257,7 +258,7 @@ angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$
     $scope.minified = false;
     
     
-    $scope.saveCSS = function() {
+    $scope.saveCSS = function() { console.log('save css called');
         ap_less.saveCSS($scope);
     }
     
@@ -340,26 +341,22 @@ angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$
     };
     //version updation
     $scope.updateVersion = function() {
-          console.log('update version');
-           var vars = ap_less.getVariables($scope, true);
-            console.log(vars.variables);
+      console.log('update version');
+      var vars = ap_less.getVariables($scope, true);
+      console.log(vars.variables);
       var version = $scope.version;
-//     
-//      console.log(version);
        version.variables = vars;
-//      
-//      //  console.log(version);
-        if (!version.updated) {
+     if (!version.updated) {
             version.updated = [];
         }
-        version.updated.push(new Date().getTime());
-
-        version.$update(function() {
-            $location.path('editor/' + version._id);
-        });
+     version.updated.push(new Date().getTime());
+    version.$update(function() {
+          //  $location.path('editor/' + version._id);
+     });
     };
     //fnd the version
      $scope.findOne = function() {
+         if($stateParams.versionId)
         Versions.get({
             versionId: $stateParams.versionId
         }, function(version) {
@@ -370,6 +367,17 @@ angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$
             ap_less.setVariables($scope,version.variables.variables);
            // ap_less.setVariables($scope,version.variables.fonts);
         });
+        else
+        {
+            console.log('created called');
+             var vars = ap_less.getVariables($scope, false);
+       // console.log(vars);
+        var version = new Versions({
+            title: this.title,
+            description: this.description,
+            variables: vars
+        });
+        }    
     };
 
   }

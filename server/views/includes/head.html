@@ -19,9 +19,9 @@
     <meta property="og:site_name" content="MEAN - A Modern Stack">
     <meta property="fb:admins" content="APP_ADMIN">
 
-    {% for file in assets.css %}
+<!--    {% for file in assets.css %}
         <link rel="stylesheet" href="{{file}}">
-    {% endfor %}
+    {% endfor %}-->
     <link id="twitterBootstrapLess" rel="stylesheet/less" href="public/lessVariables/twitter-bootstrap/less/bootstrap.less">
   <link id="twitterResponsiveLess" rel="stylesheet/less" href="public/lessVariables/twitter-bootstrap/less/responsive.less">
     <link rel="stylesheet" href="/modules/aggregated.css">
@@ -30,4 +30,9 @@
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+    <style type="text/css">
+        .navbar-fixed-top {background-color: #222}
+        .logo a:hover {color: #fff}
+        .navbar-fixed-top + .content {padding-top: 60px}
+    </style>
 </head>

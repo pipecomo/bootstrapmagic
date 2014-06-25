@@ -3,6 +3,11 @@
 // The Package is past automatically as first parameter
 module.exports = function(Bootstrapmagic, app, auth, database) {
 
+    app.get('/bootstrapmagic/download', function (req,res,next) {
+    res.download('custom-bootstrap.css');
+     res.send(next);
+    });
+    
     app.get('/bootstrapmagic/example/anyone', function (req,res,next) {
       res.send('Anyone can access this');
     });

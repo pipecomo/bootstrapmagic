@@ -28,11 +28,11 @@ angular.module('mean').config(['$stateProvider', '$urlRouterProvider',
       
     $stateProvider
       .state('bootstrapmagic editor page', {
-        url: '/editor/:versionId',
+        url: '/editor',
         templateUrl: 'bootstrapmagic/views/editor.html'
       })
-//      .state('bootstrapmagic editor page', {
-//        url: '/editor',
+//      .state('view version', {
+//        url: '/editor/:versionId',
 //        templateUrl: 'bootstrapmagic/views/editor.html'
 //      })
       
@@ -59,10 +59,9 @@ angular.module('mean').config(['$stateProvider', '$urlRouterProvider',
             })
             .state('version by id', {
                 url: '/versions/:versionId',
-                templateUrl: 'bootstrapmagic/views/view.html',
-                resolve: {
-                    loggedin: checkLoggedin
-                }
+                templateUrl: 'bootstrapmagic/views/editor.html',
+              
             })
+           
   }
 ])
