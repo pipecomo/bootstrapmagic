@@ -13,9 +13,14 @@ angular.module('mean.system').controller('HeaderController', ['$scope', '$rootSc
             'link': 'all versions'
         }, 
         {
-            'roles': ['authenticated'],
+            'roles': ['authenticated, admin'],
             'title': 'Create Version',
             'link': 'create version'
+        },
+        {
+            'roles': ['authenticated, admin'],
+            'title': 'Users',
+            'link': 'users'
         }
     ];
 

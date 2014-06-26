@@ -178,4 +178,59 @@
 		] 
 	
 	}
+        ,
+        { 
+		"name" : "OperatorBlock",
+                "data": [
+                    {"key":"@titleBackgroundColor","group":"operatorSearchCardTitle", "value":"rgba(107, 10, 63, 0.698)", "type": "color"},
+                    {"key":"@titleFontColor","group":"operatorSearchCardTitle", "value":"#b3b3b3", "type": "color"},
+                    {"key":"@titleFontSize", "group":"operatorSearchCardTitle", "value":"20px", "type": "text"},
+                    {"key":"@titleFontFamily","group":"operatorSearchCardTitle", "value":"Open Sans", "type": "font"},
+                    {"key":"@titlePadding", "group":"operatorSearchCardTitle", "value":"10px", "type": "text"},
+                    {"key":"@titleFontStyle", "group":"operatorSearchCardTitle", "value":"normal", "type": "fontstyle"},
+                    {"key":"@titleFontWeight","group":"operatorSearchCardTitle", "value":"400", "type": "fontweight"},
+                    {"key":"@contentBackgroundColor","group":"operatorSearchCardContent", "value":"#FAFAFA;", "type": "color"},
+                    {"key":"@contentPadding", "group":"operatorSearchCardContent", "value":"5px", "type": "text"},
+                    {"key":"@contentLineHeight", "group":"operatorSearchCardContent", "value":"23px", "type": "text"},
+                    {"key":"@contentTextTransform", "group":"operatorSearchCardContent", "value":"uppercase", "type": "text"},
+                    
+                    
+                    {"key":"@contentFontSize", "group":"operatorSearchCardContent", "value":"14px", "type": "text"},
+                    {"key":"@contentFontFamily","group":"operatorSearchCardContent", "value":"Open Sans", "type": "font"},
+                    {"key":"@contentFontStyle", "group":"operatorSearchCardContent", "value":"normal", "type": "fontstyle"},
+                    {"key":"@contentFontWeight","group":"operatorSearchCardContent", "value":"400", "type": "fontweight"},
+                    
+                    {"key":"@diverBorderWidth", "group":"operatorSearchCardContent", "value":"1px;", "type": "text"},
+                    {"key":"@diverBorderColor","group":"operatorSearchCardContent", "value":"#8f8f8f", "type": "color"},
+                    {"key":"@diverBorderType","group":"operatorSearchCardContent", "value":"solid", "type": "text"},
+                    
+                    {"key":"@priceFontSize", "group":"operatorSearchCardContent", "value":"20px", "type": "text"},
+                    {"key":"@btnWishlistBackgroundColor","group":"operatorSearchCardWishlistButton", "value":"#FFF", "type": "color"},
+                    {"key":"@btnWishlistFontColor","group":"operatorSearchCardWishlistButton", "value":"#6B0A3F;", "type": "color"},
+                    
+                    {"key":"@btnWishlistFontSize", "group":"operatorSearchCardWishlistButton", "value":"17px", "type": "text"},
+                    {"key":"@btnWishlistFontFamily","group":"operatorSearchCardWishlistButton", "value":"Open Sans", "type": "font"},
+                    {"key":"@btnWishlistFontStyle", "group":"operatorSearchCardWishlistButton", "value":"normal", "type": "fontstyle"},
+                    {"key":"@btnWishlistFontWeight","group":"operatorSearchCardWishlistButton", "value":"400", "type": "fontweight"},
+                    
+                    {"key":"@btnMoreBackgroundColor","group":"operatorSearchCardMoreButton", "value":"#6B0A3F;", "type": "color"},
+                    {"key":"@btnMoreFontColor","group":"operatorSearchCardMoreButton", "value":"#FFF;", "type": "color"},
+                    {"key":"@btnMoreFontSize", "group":"operatorSearchCardMoreButton", "value":"17px", "type": "text"},
+                    {"key":"@btnMoreFontFamily","group":"operatorSearchCardMoreButton", "value":"Open Sans", "type": "font"},
+                    {"key":"@btnMoreFontStyle", "group":"operatorSearchCardMoreButton", "value":"normal", "type": "fontstyle"},
+                    {"key":"@btnMoreFontWeight","group":"operatorSearchCardMoreButton", "value":"400", "type": "fontweight"},
+                    
+                    {"key":"@featureBackgroundColor","group":"operatorSearchCardFeature", "value":"#79C143 ;", "type": "color"},
+                    {"key":"@featureFontColor","group":"operatorSearchCardFeature", "value":"#FFF;", "type": "color"},
+                    {"key":"@featureFontSize", "group":"operatorSearchCardFeature", "value":"13px;", "type": "text"},
+                    {"key":"@featureFontFamily","group":"operatorSearchCardFeature", "value":"Open Sans", "type": "font"},
+                    {"key":"@featureFontStyle", "group":"operatorSearchCardFeature", "value":"normal", "type": "fontstyle"},
+                    {"key":"@featureFontWeight","group":"operatorSearchCardFeature", "value":"400", "type": "fontweight"},
+                    {"key":"@featureTextTransform", "group":"operatorSearchCardFeature", "value":"uppercase", "type": "text"},
+                    {"key":"@featureLineHeight", "group":"operatorSearchCardFeature", "value":"13px", "type": "text"},
+                    {"key":"@featurePadding", "group":"operatorSearchCardFeature", "value":"8px 7px 5px 36px", "type": "text"},
+                    {"key":"@starRatingBackgroundColor","group":"operatorSearchStarRating", "value":"#FAFAFA", "type": "color"}
+                   
+                ]
+        }
 ]
