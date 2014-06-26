@@ -3,8 +3,8 @@
 		<div data-ng-repeat="version in versions">
 			
                     <div class="row">
-			<div class="pull-left"><a data-ng-href="#!/versions/{{version._id}}">{{version.name}}</a></div>
-                        <div class="pull-left">: {{version.title}}</div>
+			<div class="pull-left"><a data-ng-href="#!/versions/{{version._id}}">{{version.title}}</a></div>
+                        <div class="pull-left">: {{version.description}}</div>
                         <div  class="pull-right" data-ng-show="global.user._id == version.user._id">
                             <a class="btn" href="/#!/versions/{{version._id}}/edit">
                                EDIT     <i class="glyphicon glyphicon-edit"></i>

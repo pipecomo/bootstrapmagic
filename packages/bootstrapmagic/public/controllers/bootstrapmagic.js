@@ -24,7 +24,7 @@ angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$
             $scope.variables = data;
             $timeout(function() {
                 $scope.applyLess(false);
-            },0);
+            },500);
             $timeout(function() {
                 // move into a service
                 var keys = ap_less.getKeys($scope);
@@ -365,6 +365,7 @@ angular.module('mean.bootstrapmagic').controller('BootstrapmagicController', ['$
             console.log(version.variables.variables);
             console.log('setting the variables');
             ap_less.setVariables($scope,version.variables.variables);
+              $scope.applyLess();
            // ap_less.setVariables($scope,version.variables.fonts);
         });
         else
