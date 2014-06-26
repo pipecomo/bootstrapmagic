@@ -1,0 +1,195 @@
+.card {
+
+    position: relative;
+
+    width: 270px;
+
+    display:block;
+
+    padding-top:40px;
+
+    .thumbnail
+     {
+       position: relative;
+       display: block;
+       padding: 0px;
+       line-height: 20px;
+       border: none 0px;
+       -webkit-border-radius: 0px;
+       -moz-border-radius: 0px;
+       border-radius: 0px;
+       -webkit-box-shadow: none;
+       -moz-box-shadow: none;
+       box-shadow: none;
+       -webkit-transition: all 0.2s ease-in-out;
+       -moz-transition: all 0.2s ease-in-out;
+       -o-transition: all 0.2s ease-in-out;
+       transition: all 0.2s ease-in-out;
+     }
+
+     .thumbnail-inner 
+        {
+            overflow: hidden;
+            max-height: 202px;
+            height: 202px;
+            border-radius: 6px 6px 0 0;
+            
+
+        }
+   
+     .featured 
+      {
+        position: absolute;
+        display: none;
+        color: #FFF;
+        font-size: 13px;
+        padding: 8px 7px 5px 36px;
+        bottom: 72px;
+        text-transform: uppercase;
+        background: url(../app/img/diamond-op-search.png) #F85051 10px 6px no-repeat;
+        line-height: 13px;
+     }
+     .hotdeal 
+      {
+        color: @featureFontColor;
+        font-size: @featureFontSize;
+        padding: @featurePadding;
+        bottom: 72px;
+        text-transform: @featureTextTransform;
+        background: url("../app/img/heartine-op-search.png") no-repeat scroll 10px 6px @featureBackgroundColor;
+        line-height: @featureLineHeight;
+        font-family:@featureFontFamily;
+        font-style:@featureFontStyle;
+        font-weight:@featureFontWeight;
+      }
+
+       .title 
+        {
+            background-color: @titleBackgroundColor;
+            color: rgb(255, 255, 255);
+            font-size: @titleFontSize;
+            position: absolute;
+            z-index: 5;
+            bottom: 0px;
+            left: 0px;
+            right: 0;
+            min-height: 52px;
+            padding: @titlePadding;
+            a
+            {
+                text-decoration: none;
+                color: @titleFontColor;
+                font-family:@titleFontFamily;
+                font-style:@titleFontStyle;
+                font-weight:@titleFontWeight;
+            }
+        }
+        
+        .info-bar 
+        {
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            bottom: -32px;
+            opacity: 0.85;
+            background-color: @starRatingBackgroundColor;
+
+            .info-content 
+            {
+                padding-top: 11px;
+                padding-bottom: 1px;
+                padding: 6px 10px;
+                
+               .star 
+               {
+                    margin-top: -3px;
+            }
+            .star.pull-right {
+                float: left
+            }
+           
+         }
+      }
+      .clearfix
+       {
+          clear: both;
+       }
+       .pull-left 
+        {
+          float: left;
+        }
+        .pull-right
+        {
+          float: right;  
+        }
+      .content
+         {
+            text-transform: @contentTextTransform;
+            background-color: @contentBackgroundColor;
+            margin-top: 32px;
+            padding: 5px;
+            
+            font-family: @contentFontFamily;
+            font-size: @contentFontSize;
+            font-style:@contentFontStyle;
+            font-weight:@contentFontWeight;
+            
+            .divider 
+               {
+                    border-bottom: @diverBorderWidth @diverBorderType @diverBorderColor;
+               }
+
+
+            .btn-wishlist
+             {
+                    background-color: @btnWishlistBackgroundColor;
+                    background-image: none;
+                    border: 1px solid rgb(107, 10, 63);
+                    color: @btnWishlistFontColor;
+                    box-shadow: none;
+                    font-family: @btnWishlistFontFamily;
+                    font-size: @btnWishlistFontSize;
+                    border-radius: 0px 0px 0px 0px;
+                    float: left;
+                    width: 53%;
+                    font-style:@btnWishlistFontStyle;
+                    font-weight:@btnWishlistFontWeight;
+            }
+         }
+
+         .content-group 
+           {
+                line-height: @contentLineHeight;
+                padding: @contentPadding;
+           }
+         .price 
+            {
+                letter-spacing: -1px;
+            }
+         .label-important 
+          {
+            background-color: rgba(0, 0, 0, 0);
+            font-size: @priceFontSize;
+          }
+          
+          .btn-primary
+          {
+                color: @btnMoreFontColor;
+                font-size: @btnMoreFontSize;
+                font-family: @btnMoreFontFamily;
+                border: 1px solid rgb(107, 10, 63);
+                background: @btnMoreBackgroundColor;
+                box-shadow: none;
+                float: right;
+                width: 35%;
+                font-style:@btnMoreFontStyle;
+                font-weight:@btnMoreFontWeight;
+         }
+         .btn 
+          {
+                 padding: 6px 4px;
+          }
+}
